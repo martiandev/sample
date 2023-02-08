@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="fragment"
+            type="team.standalone.feature.userinfo.ui.updateemail.UpdateEmailFragment" />
+
+        <variable
+            name="viewModel"
+            type="team.standalone.feature.userinfo.ui.updateemail.UpdateEmailViewModel" />
+
+        <variable
+            name="user"
+            type="team.standalone.core.data.domain.model.User" />
+    </data>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/background">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="@dimen/padding">
+
+            <com.google.android.material.textview.MaterialTextView
+                style="@style/Material3.TextView.Title"
+                android:fontFamily="@font/noto_sans_jp_medium"
+                android:textSize="16sp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/margin"
+                android:gravity="center"
+                android:text="@string/user_info_fragment_update_email_title"
+                android:textStyle="bold" />
+
+            <com.google.android.material.textview.MaterialTextView
+                style="@style/Material3.TextView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/margin"
+                android:text='@{@string/user_info_fragment_update_email_email(user.email ?? "")}' />
+
+            <!-- new email -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/margin"
+                android:orientation="vertical">
+
+                <com.google.android.material.textview.MaterialTextView
+                    style="@style/Material3.TextView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/user_info_fragment_update_email_hint_new_email" />
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/textInputLayoutNewEmail"
+                    style="@style/Material3.TextInputLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:hintEnabled="false">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/textInputEditTextNewEmail"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="@string/user_info_fragment_update_email_helper_new_email"
+                        android:inputType="textEmailAddress"
+                        android:text="@={viewModel.newEmail.input}" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textview.MaterialTextView
+                    style="@style/Material3.TextView.Error"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:formError="@{viewModel.newEmail.error}"
+                    app:formHasError="@{viewModel.newEmail.hasError}" />
+            </LinearLayout>
+
+            <!-- new email confirmation -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/margin"
+                android:orientation="vertical">
+
+                <com.google.android.material.textview.MaterialTextView
+                    style="@style/Material3.TextView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/user_info_fragment_update_email_hint_new_email_confirmation" />
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/textInputLayoutNewEmailConfirmation"
+                    style="@style/Material3.TextInputLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:hintEnabled="false">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/textInputEditTextNewEmailConfirmation"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="@string/user_info_fragment_update_email_helper_new_email_confirmation"
+                        android:inputType="textEmailAddress"
+                        android:text="@={viewModel.newEmailConfirmation.input}" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textview.MaterialTextView
+                    style="@style/Material3.TextView.Error"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:formError="@{viewModel.newEmailConfirmation.error}"
+                    app:formHasError="@{viewModel.newEmailConfirmation.hasError}" />
+            </LinearLayout>
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/buttonUpdateEmail"
+                style="@style/Material3.Button"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:onClick="@{() -> viewModel.updateEmail()}"
+                android:text="@string/user_info_fragment_update_email_btn_update" />
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+</layout>

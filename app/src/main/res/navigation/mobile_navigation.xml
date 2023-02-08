@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/navigation_home">
+
+    <include app:graph="@navigation/navigation_other" />
+
+    <action
+        android:id="@+id/actionGlobalNavigationOther"
+        app:destination="@id/navigation_other"
+        app:enterAnim="@anim/enter_from_right"
+        app:exitAnim="@anim/exit_to_left"
+        app:popEnterAnim="@anim/enter_from_left"
+        app:popExitAnim="@anim/exit_to_right"/>
+
+    <fragment
+        android:id="@+id/navigation_home"
+        android:name="team.standalone.fumiya.ui.home.HomeFragment"
+        android:label="@string/title_map"
+        tools:layout="@layout/fragment_home">
+        <action
+            android:id="@+id/action_navigation_home_to_navigation_error_navigation"
+            app:destination="@id/navigation_error_navigation"
+            app:popUpTo="@id/navigation_home"
+            app:popUpToInclusive="true"/>
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_park"
+        android:name="team.standalone.fumiya.ui.park.tab.ParkFragment"
+        android:label="@string/title_park"
+        tools:layout="@layout/fragment_park">
+        <action
+            android:id="@+id/action_navigation_park_to_navigation_error_navigation"
+            app:destination="@id/navigation_error_navigation"
+            app:popUpTo="@id/navigation_park"
+            app:popUpToInclusive="true"/>
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_chat"
+        android:name="team.standalone.fumiya.ui.base.ChatFragment"
+        android:label="@string/title_base"
+        tools:layout="@layout/fragment_chat">
+        <action
+            android:id="@+id/action_navigation_chat_to_navigation_error_navigation"
+            app:destination="@id/navigation_error_navigation"
+            app:popUpTo="@id/navigation_chat"
+            app:popUpToInclusive="true"/>
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_live"
+        android:name="team.standalone.fumiya.ui.live.LiveFragment"
+        android:label="@string/title_station"
+        tools:layout="@layout/fragment_live">
+        <action
+            android:id="@+id/action_navigation_live_to_navigation_error_navigation"
+            app:destination="@id/navigation_error_navigation"
+            app:popUpTo="@id/navigation_live"
+            app:popUpToInclusive="true"/>
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_error_navigation"
+        android:name="team.standalone.fumiya.ui.util.error.ErrorNetworkFragment"
+        tools:layout="@layout/fragment_error_network"/>
+
+</navigation>

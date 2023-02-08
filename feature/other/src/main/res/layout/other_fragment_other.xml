@@ -1,0 +1,349 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="fragment"
+            type="team.standalone.feature.other.ui.other.OtherFragment" />
+
+        <variable
+            name="viewModel"
+            type="team.standalone.feature.other.ui.other.OtherViewModel" />
+
+        <variable
+            name="appVersionName"
+            type="String" />
+
+        <variable
+            name="appVersionCode"
+            type="String" />
+
+        <variable
+            name="user"
+            type="team.standalone.core.data.domain.model.User" />
+    </data>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/background"
+        android:clipToPadding="false">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingTop="@dimen/padding"
+            android:paddingBottom="@dimen/padding">
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/divider"
+                android:layout_marginStart="@dimen/margin"
+                android:layout_marginEnd="@dimen/margin"
+                android:background="@color/divider" />
+
+            <!-- user information -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:onClick="@{() -> viewModel.openUserInformation()}"
+                android:orientation="horizontal"
+                android:padding="@dimen/padding">
+
+                <com.google.android.material.textview.MaterialTextView
+                    style="@style/Material3.TextView"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/other_fragment_other_btn_user_information" />
+
+                <com.google.android.material.imageview.ShapeableImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:srcCompat="@drawable/ic_baseline_keyboard_arrow_right_24"
+                    app:tint="@color/icon_primary" />
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/divider"
+                android:layout_marginStart="@dimen/margin"
+                android:layout_marginEnd="@dimen/margin"
+                android:background="@color/divider" />
+
+            <!-- chat language settings -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:clickable="@{user.isMember()}"
+                android:gravity="center_vertical"
+                android:onClick="@{() -> viewModel.openChatLanguageSettings()}"
+                android:orientation="horizontal"
+                android:padding="@dimen/padding">
+
+                <com.google.android.material.textview.MaterialTextView
+                    style="@style/Material3.TextView"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/other_fragment_other_btn_chat_language_settings"
+                    android:textColor="@{user.isMember() ? @color/text_primary : @color/disabled}" />
+
+                <com.google.android.material.imageview.ShapeableImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:srcCompat="@drawable/ic_baseline_keyboard_arrow_right_24"
+                    app:tint="@{user.isMember() ? @color/icon_primary : @color/disabled}" />
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/divider"
+                android:layout_marginStart="@dimen/margin"
+                android:layout_marginEnd="@dimen/margin"
+                android:layout_marginBottom="@dimen/margin"
+                android:background="@color/divider" />
+
+            <com.google.android.material.textview.MaterialTextView
+                style="@style/Material3.TextView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/padding"
+                android:text="@string/other_fragment_other_label_about_app"
+                android:textStyle="bold" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/divider"
+                android:layout_marginStart="@dimen/margin"
+                android:layout_marginEnd="@dimen/margin"
+                android:background="@color/divider" />
+
+            <!-- privacy policy -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:onClick="@{() -> viewModel.openPrivacyPolicy()}"
+                android:orientation="horizontal"
+                android:padding="@dimen/padding">
+
+                <com.google.android.material.textview.MaterialTextView
+                    style="@style/Material3.TextView"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/other_fragment_other_btn_privacy_policy" />
+
+                <com.google.android.material.imageview.ShapeableImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:srcCompat="@drawable/ic_baseline_keyboard_arrow_right_24"
+                    app:tint="@color/icon_primary" />
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/divider"
+                android:layout_marginStart="@dimen/margin"
+                android:layout_marginEnd="@dimen/margin"
+                android:background="@color/divider" />
+
+            <!-- terms of service -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:onClick="@{() -> viewModel.openTermsOfService()}"
+                android:orientation="horizontal"
+                android:padding="@dimen/padding">
+
+                <com.google.android.material.textview.MaterialTextView
+                    style="@style/Material3.TextView"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/other_fragment_other_btn_terms_of_service" />
+
+                <com.google.android.material.imageview.ShapeableImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:srcCompat="@drawable/ic_baseline_keyboard_arrow_right_24"
+                    app:tint="@color/icon_primary" />
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/divider"
+                android:layout_marginStart="@dimen/margin"
+                android:layout_marginEnd="@dimen/margin"
+                android:background="@color/divider" />
+
+            <!-- transaction law -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:onClick="@{() -> viewModel.openTransactionsLaw()}"
+                android:orientation="horizontal"
+                android:padding="@dimen/padding">
+
+                <com.google.android.material.textview.MaterialTextView
+                    style="@style/Material3.TextView"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/other_fragment_other_btn_transaction_law" />
+
+                <com.google.android.material.imageview.ShapeableImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:srcCompat="@drawable/ic_baseline_open_in_new_24"
+                    app:tint="@color/icon_primary" />
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/divider"
+                android:layout_marginStart="@dimen/margin"
+                android:layout_marginEnd="@dimen/margin"
+                android:background="@color/divider" />
+
+            <!-- license -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:onClick="@{() -> viewModel.openLicense()}"
+                android:orientation="horizontal"
+                android:padding="@dimen/padding">
+
+                <com.google.android.material.textview.MaterialTextView
+                    style="@style/Material3.TextView"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/other_fragment_other_btn_license" />
+
+                <com.google.android.material.imageview.ShapeableImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:srcCompat="@drawable/ic_baseline_keyboard_arrow_right_24"
+                    app:tint="@color/icon_primary" />
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/divider"
+                android:layout_marginStart="@dimen/margin"
+                android:layout_marginEnd="@dimen/margin"
+                android:background="@color/divider" />
+
+            <!-- inquiry -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:onClick="@{() -> viewModel.openFaq()}"
+                android:orientation="horizontal"
+                android:padding="@dimen/padding">
+
+                <com.google.android.material.textview.MaterialTextView
+                    style="@style/Material3.TextView"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/other_fragment_other_btn_faq" />
+
+                <com.google.android.material.imageview.ShapeableImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:srcCompat="@drawable/ic_baseline_open_in_new_24"
+                    app:tint="@color/icon_primary" />
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/divider"
+                android:layout_marginStart="@dimen/margin"
+                android:layout_marginEnd="@dimen/margin"
+                android:background="@color/divider" />
+
+            <!-- delete account -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:onClick="@{() -> viewModel.openDeleteAccountWarning()}"
+                android:orientation="horizontal"
+                android:padding="@dimen/padding">
+
+                <com.google.android.material.textview.MaterialTextView
+                    style="@style/Material3.TextView"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/other_fragment_other_btn_delete_account" />
+
+                <com.google.android.material.imageview.ShapeableImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:srcCompat="@drawable/ic_baseline_keyboard_arrow_right_24"
+                    app:tint="@color/icon_primary" />
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/divider"
+                android:layout_marginStart="@dimen/margin"
+                android:layout_marginEnd="@dimen/margin"
+                android:background="@color/divider" />
+
+            <!-- app version -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:padding="@dimen/padding">
+
+                <com.google.android.material.textview.MaterialTextView
+                    style="@style/Material3.TextView"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/other_fragment_other_label_app_version" />
+
+                <com.google.android.material.textview.MaterialTextView
+                    style="@style/Material3.TextView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text='@{appVersionName + " (" + appVersionCode + ")"}' />
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/divider"
+                android:layout_marginStart="@dimen/margin"
+                android:layout_marginEnd="@dimen/margin"
+                android:layout_marginBottom="@dimen/margin"
+                android:background="@color/divider" />
+
+            <!-- sign out -->
+            <com.google.android.material.button.MaterialButton
+                style="@style/Material3.Button.Text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin"
+                android:layout_marginEnd="@dimen/margin"
+                android:onClick="@{() -> viewModel.openSignOutConfirmation()}"
+                android:text="@string/other_fragment_other_btn_sign_out"
+                android:textColor="@color/orange"
+                app:isUnderlined="@{true}" />
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+</layout>

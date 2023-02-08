@@ -1,0 +1,32 @@
+pluginManagement {
+    repositories {
+        gradlePluginPortal()
+        google()
+        mavenCentral()
+        maven { url 'https://jitpack.io' }
+    }
+}
+
+dependencyResolutionManagement {
+    repositoriesMode.set(RepositoriesMode.PREFER_SETTINGS)
+    repositories {
+        google()
+        mavenCentral()
+        maven { url 'https://jitpack.io' }
+       jcenter()
+    }
+}
+
+
+rootProject.name = "Fumiya"
+include ':app'
+include ':core:common'
+include ':core:data'
+include ':core:database'
+include ':core:datastore'
+include ':core:network'
+include ':core:ui'
+include ':feature:reset-password'
+include ':feature:billing'
+include ':feature:other'
+include ':feature:user-info'

@@ -1,0 +1,350 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="team.standalone.fumiya.ui.auth.signup.signupverification.SignUpVerificationViewModel" />
+    </data>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/background">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="20dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            tools:context=".ui.auth.signup.signupverification.SignUpVerificationFragment">
+
+            <TextView
+                android:id="@+id/tv_header_description"
+                style="@style/FumiyaTextStyleBold"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="40dp"
+                android:text="@string/fragment_sign_up_verification_header"
+                android:textSize="16sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:id="@+id/iv_steps"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:contentDescription="@string/iv_steps"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tv_header_description"
+                app:srcCompat="@drawable/ic_form_step_02" />
+
+            <TextView
+                android:id="@+id/tv_message"
+                style="@style/FumiyaTextStyle"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:includeFontPadding="false"
+                android:paddingBottom="15dp"
+                android:text="@string/fragment_sign_up_verification_description"
+                android:textFontWeight="400"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/iv_steps" />
+
+            <TextView
+                android:id="@+id/tv_go_login"
+                style="@style/FumiyaTextStyle"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:foreground="?attr/selectableItemBackground"
+                android:includeFontPadding="false"
+                android:onClick="@{() -> viewModel.goToLogin()}"
+                android:padding="5dp"
+                android:text="@string/fragment_sign_up_verification_completed"
+                android:textColor="@color/colorInputLink"
+                android:textFontWeight="400"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tv_message"
+                app:underlineText="@{true}" />
+
+            <TextView
+                android:id="@+id/tv_message_resend"
+                style="@style/FumiyaTextStyle"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:includeFontPadding="false"
+                android:paddingTop="15dp"
+                android:text="@string/fragment_sign_up_verification_message"
+                android:textFontWeight="400"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tv_go_login" />
+
+            <LinearLayout
+                android:id="@+id/linear_resend1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tv_message_resend">
+
+                <TextView
+                    style="@style/FumiyaTextStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:foreground="?attr/selectableItemBackground"
+                    android:includeFontPadding="false"
+                    android:padding="4dp"
+                    android:text="@string/fragment_sign_up_verification_bullet"
+                    android:textFontWeight="400" />
+
+                <TextView
+                    style="@style/FumiyaTextStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:includeFontPadding="false"
+                    android:text="@string/fragment_sign_up_verification_message_bullet_1"
+                    android:textFontWeight="400" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/linear_resend2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:paddingBottom="15dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/linear_resend1">
+
+                <TextView
+                    style="@style/FumiyaTextStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:foreground="?attr/selectableItemBackground"
+                    android:includeFontPadding="false"
+                    android:padding="4dp"
+                    android:text="@string/fragment_sign_up_verification_bullet"
+                    android:textFontWeight="400" />
+
+                <TextView
+                    style="@style/FumiyaTextStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:includeFontPadding="false"
+                    android:text="@string/fragment_sign_up_verification_message_bullet_2"
+                    android:textFontWeight="400" />
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/tv_resend_email"
+                style="@style/FumiyaTextStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:foreground="?attr/selectableItemBackground"
+                android:includeFontPadding="false"
+                android:onClick="@{() -> viewModel.resendVerification()}"
+                android:padding="5dp"
+                android:text="@string/fragment_sign_up_verification_resend"
+                android:textColor="@color/colorInputLink"
+                android:textFontWeight="400"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/linear_resend2"
+                app:underlineText="@{true}" />
+
+            <TextView
+                android:id="@+id/tv_message_inquiry"
+                style="@style/FumiyaTextStyle"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:includeFontPadding="false"
+                android:paddingTop="15dp"
+                android:text="@string/fragment_sign_up_verification_inquiry"
+                android:textFontWeight="400"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tv_resend_email" />
+
+            <LinearLayout
+                android:id="@+id/linear_inquiry1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tv_message_inquiry">
+
+                <TextView
+                    style="@style/FumiyaTextStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:foreground="?attr/selectableItemBackground"
+                    android:includeFontPadding="false"
+                    android:padding="4dp"
+                    android:gravity="center"
+                    android:text="@string/fragment_sign_up_verification_bullet"
+                    android:textFontWeight="400" />
+
+                <TextView
+                    style="@style/FumiyaTextStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:includeFontPadding="false"
+                    android:text="@string/fragment_sign_up_verification_inquiry_bullet_1"
+                    android:textFontWeight="400" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/linear_inquiry2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/linear_inquiry1">
+
+                <TextView
+                    style="@style/FumiyaTextStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:foreground="?attr/selectableItemBackground"
+                    android:includeFontPadding="false"
+                    android:padding="4dp"
+                    android:text="@string/fragment_sign_up_verification_bullet"
+                    android:textFontWeight="400" />
+
+                <TextView
+                    style="@style/FumiyaTextStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:includeFontPadding="false"
+                    android:text="@string/fragment_sign_up_verification_inquiry_bullet_2"
+                    android:textFontWeight="400" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/linear_inquiry3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/linear_inquiry2">
+
+                <TextView
+                    style="@style/FumiyaTextStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:foreground="?attr/selectableItemBackground"
+                    android:includeFontPadding="false"
+                    android:padding="4dp"
+                    android:text="@string/fragment_sign_up_verification_bullet"
+                    android:textFontWeight="400" />
+
+                <TextView
+                    style="@style/FumiyaTextStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:includeFontPadding="false"
+                    android:text="@string/fragment_sign_up_verification_inquiry_bullet_3"
+                    android:textFontWeight="400" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/linear_inquiry4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:paddingBottom="15dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/linear_inquiry3">
+
+                <TextView
+                    style="@style/FumiyaTextStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:foreground="?attr/selectableItemBackground"
+                    android:includeFontPadding="false"
+                    android:padding="4dp"
+                    android:text="@string/fragment_sign_up_verification_bullet"
+                    android:textFontWeight="400" />
+
+                <TextView
+                    style="@style/FumiyaTextStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:includeFontPadding="false"
+                    android:text="@string/fragment_sign_up_verification_inquiry_bullet_4"
+                    android:textFontWeight="400" />
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/tv_message_inquiry2"
+                style="@style/FumiyaTextStyle"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:includeFontPadding="false"
+                android:paddingTop="15dp"
+                android:text="@string/fragment_sign_up_verification_inquiry2"
+                android:textFontWeight="400"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/linear_inquiry4" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tv_message_inquiry2">
+
+                <TextView
+                    android:id="@+id/tv_inquiry"
+                    style="@style/FumiyaTextStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:foreground="?attr/selectableItemBackground"
+                    android:includeFontPadding="false"
+                    android:onClick="@{() -> viewModel.openBrowser()}"
+                    android:padding="5dp"
+                    android:text="@string/fragment_sign_up_verification_contact_inquiry"
+                    android:textColor="@color/colorInputLink"
+                    android:textFontWeight="400"
+                    app:underlineText="@{true}" />
+
+                <TextView
+                    android:id="@+id/tv_message_contact_us"
+                    style="@style/FumiyaTextStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:includeFontPadding="false"
+                    android:text="@string/fragment_sign_up_verification_contact_us"
+                    android:textFontWeight="400" />
+            </LinearLayout>
+
+            <ProgressBar
+                android:id="@+id/progressBar"
+                style="?android:attr/progressBarStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:visibility="gone"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+</layout>

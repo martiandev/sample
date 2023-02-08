@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="Material3.ProgressIndicator.Circle.ExtraSmall" parent="Widget.Material3.CircularProgressIndicator.ExtraSmall" />
+
+    <style name="Material3.ProgressIndicator.Circle.Small" parent="Widget.Material3.CircularProgressIndicator.Small" />
+
+    <style name="Material3.ProgressIndicator.Circle.Medium" parent="Widget.Material3.CircularProgressIndicator.Medium" />
+
+    <!-- TODO: INSERT CUSTOM HERE -->
+
+</resources>

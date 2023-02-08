@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="err_unavailable_intent">No available application</string>
+    <string name="common_required">Required</string>
+    <string name="common_ok">OK</string>
+</resources>

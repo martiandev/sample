@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- app -->
+    <color name="colorFumiyaTheme">#314780</color>
+    <color name="colorPrimary">#313172</color>
+    <color name="colorPrimaryVariant">#252555</color>
+    <color name="colorPrimaryDark">#252555</color>
+    <color name="colorTransparent">#4CA2CD</color>
+    <color name="purple_200">#FFBB86FC</color>
+    <color name="purple_500">#FF6200EE</color>
+    <color name="purple_700">#FF3700B3</color>
+    <color name="teal_200">#FF03DAC5</color>
+    <color name="teal_700">#FF018786</color>
+    <color name="background">#007AB7</color>
+    <color name="disabled">#004E76</color>
+    <color name="error">@color/orange</color>
+    <color name="chat_language_settings_check">#007AFF</color>
+    <color name="chat_language_settings_divider">#C4C4C4</color>
+    <!-- common -->
+    <color name="text_primary">@color/text_primary_light</color>
+    <color name="text_secondary">@color/text_secondary_light</color>
+    <color name="text_primary_light">#fbf6eb</color>
+    <color name="text_secondary_light">#A6A6A6</color>
+    <color name="text_primary_dark">#222737</color>
+    <color name="text_secondary_dark">#A6A6A6</color>
+    <color name="divider">@color/divider_light</color>
+    <color name="divider_light">#FFFFFFFF</color>
+    <color name="divider_dark">#5d5d5d</color>
+    <color name="icon_primary">@color/icon_primary_light</color>
+    <color name="icon_secondary">@color/icon_secondary_light</color>
+    <color name="icon_primary_light">#fbf6eb</color>
+    <color name="icon_secondary_light">#A6A6A6</color>
+    <color name="icon_primary_dark">#222737</color>
+    <color name="icon_secondary_dark">#A6A6A6</color>
+    <!-- solid colors -->
+    <color name="orange">#ff8a00</color>
+    <color name="blue">#2196f3</color>
+    <color name="cyan">#00bcd4</color>
+    <color name="gold">#ffd700</color>
+    <color name="red">#ff0000</color>
+    <color name="gray">#808080</color>
+    <color name="light_gray">#d3d3d3</color>
+    <color name="grayscale">#d9d9d9</color>
+    <color name="white_smoke">#f5f5f5</color>
+    <color name="green">#008000</color>
+    <color name="dark_green">#006400</color>
+    <color name="lime">#00FF00</color>
+    <color name="lime_green">#32CD32</color>
+    <color name="yellow">#FFEB3B</color>
+    <color name="turquoise">#40E0D0</color>
+    <color name="transparent">#00ffffff</color>
+    <color name="silver">#c0c0c0</color>
+    <color name="black">#000000</color>
+    <color name="white">#ffffff</color>
+    <color name="bronze">#cd7f32</color>
+    <color name="maroon">#800000</color>
+    <color name="dark_red">#8B0000</color>
+</resources>

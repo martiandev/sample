@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/auth_navigation"
+    app:startDestination="@id/signInFragment">
+
+    <include app:graph="@navigation/navigation_reset_password" />
+
+    <include app:graph="@navigation/navigation_other" />
+
+    <fragment
+        android:id="@+id/signInFragment"
+        android:name="team.standalone.fumiya.ui.auth.signin.SignInFragment"
+        android:label="@string/fragment_sign_in_header">
+        <action
+            android:id="@+id/action_signInFragment_to_signUpFragment"
+            app:destination="@id/signUpFragment"
+            app:enterAnim="@anim/enter_from_right"
+            app:exitAnim="@anim/exit_to_left"
+            app:popEnterAnim="@anim/enter_from_left"
+            app:popExitAnim="@anim/exit_to_right" />
+        <action
+            android:id="@+id/action_signInFragment_to_signUpInputDetailsFragment"
+            app:destination="@id/signUpInputDetailsFragment"
+            app:enterAnim="@anim/enter_from_right"
+            app:exitAnim="@anim/exit_to_left"
+            app:popEnterAnim="@anim/enter_from_left"
+            app:popExitAnim="@anim/exit_to_right" />
+        <action
+            android:id="@+id/action_signInFragment_to_forgotPasswordFragment"
+            app:destination="@id/resetPasswordFragment"
+            app:enterAnim="@anim/enter_from_right"
+            app:exitAnim="@anim/exit_to_left"
+            app:popEnterAnim="@anim/enter_from_left"
+            app:popExitAnim="@anim/exit_to_right" />
+        <action
+            android:id="@+id/action_signInFragment_to_mainActivity"
+            app:destination="@id/mainActivity" />
+        <action
+            android:id="@+id/action_signInFragment_to_navigation_reset_password"
+            app:destination="@id/navigation_reset_password"
+            app:enterAnim="@anim/enter_from_right"
+            app:exitAnim="@anim/exit_to_left"
+            app:popEnterAnim="@anim/enter_from_left"
+            app:popExitAnim="@anim/exit_to_right" />
+    </fragment>
+    <fragment
+        android:id="@+id/signUpFragment"
+        android:name="team.standalone.fumiya.ui.auth.signup.signup.SignUpFragment"
+        android:label="@string/fragment_sign_up_header">
+        <action
+            android:id="@+id/action_signUpFragment_to_signUpVerificationFragment"
+            app:destination="@id/signUpVerificationFragment"
+            app:enterAnim="@anim/enter_from_right"
+            app:exitAnim="@anim/exit_to_left"
+            app:popEnterAnim="@anim/enter_from_left"
+            app:popExitAnim="@anim/exit_to_right"
+            app:popUpTo="@id/signUpFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/signUpInputDetailsFragment"
+        android:name="team.standalone.fumiya.ui.auth.signup.signupdetails.SignUpInputDetailsFragment"
+        android:label="@string/fragment_sign_up_header" >
+        <action
+            android:id="@+id/action_signUpInputDetailsFragment_to_signUpPreviewDetailsFragment"
+            app:destination="@id/signUpPreviewDetailsFragment"
+            app:enterAnim="@anim/enter_from_right"
+            app:exitAnim="@anim/exit_to_left"
+            app:popEnterAnim="@anim/enter_from_left"
+            app:popExitAnim="@anim/exit_to_right"/>
+        <action
+            android:id="@+id/action_signUpInputDetailsFragment_to_selectBirthdateDialog"
+            app:destination="@id/selectBirthdateDialog" />
+    </fragment>
+    <fragment
+        android:id="@+id/signUpVerificationFragment"
+        android:name="team.standalone.fumiya.ui.auth.signup.signupverification.SignUpVerificationFragment"
+        android:label="@string/fragment_sign_up_header" />
+    <fragment
+        android:id="@+id/signUpPreviewDetailsFragment"
+        android:name="team.standalone.fumiya.ui.auth.signup.signupdetails.SignUpPreviewDetailsFragment"
+        android:label="@string/fragment_sign_up_header" >
+        <argument
+            android:name="user"
+            app:argType="team.standalone.core.data.domain.model.param.UserParam" />
+        <action
+            android:id="@+id/action_signUpPreviewDetailsFragment_to_billingSubscriptionActivity"
+            app:destination="@id/billingSubscriptionActivity" />
+    </fragment>
+    <activity
+        android:id="@+id/mainActivity"
+        android:name="team.standalone.fumiya.ui.MainActivity"
+        android:label="MainActivity" />
+    <dialog
+        android:id="@+id/selectBirthdateDialog"
+        android:name="team.standalone.fumiya.ui.auth.birthdate.SelectBirthdateDialog"
+        android:label="SelectBirthdateDialog" >
+        <argument
+            android:name="birthdateParam"
+            app:argType="team.standalone.core.data.domain.model.param.BirthdateParam"
+            app:nullable="true" />
+    </dialog>
+    <activity
+        android:id="@+id/billingSubscriptionActivity"
+        android:name="team.standalone.feature.billing.BillingSubscriptionActivity"
+        android:label="BillingSubscriptionActivity" />
+</navigation>

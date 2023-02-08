@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/tutorial_navigation"
+    app:startDestination="@id/tutorialOneFragment">
+
+    <fragment
+        android:id="@+id/tutorialOneFragment"
+        android:name="team.standalone.fumiya.ui.auth.tutorial.TutorialOneFragment"
+        android:label="TutorialOneFragment">
+        <action
+            android:id="@+id/action_tutorialOneFragment_to_tutorialTwoFragment"
+            app:destination="@id/tutorialTwoFragment"
+            app:enterAnim="@anim/enter_from_right"
+            app:exitAnim="@anim/exit_to_left"
+            app:popEnterAnim="@anim/enter_from_left"
+            app:popExitAnim="@anim/exit_to_right" />
+    </fragment>
+    <fragment
+        android:id="@+id/tutorialTwoFragment"
+        android:name="team.standalone.fumiya.ui.auth.tutorial.TutorialTwoFragment"
+        android:label="">
+        <action
+            android:id="@+id/action_tutorialTwoFragment_to_tutorialThreeFragment"
+            app:destination="@id/tutorialThreeFragment"
+            app:enterAnim="@anim/enter_from_right"
+            app:exitAnim="@anim/exit_to_left"
+            app:popEnterAnim="@anim/enter_from_left"
+            app:popExitAnim="@anim/exit_to_right" />
+    </fragment>
+    <fragment
+        android:id="@+id/tutorialThreeFragment"
+        android:name="team.standalone.fumiya.ui.auth.tutorial.TutorialThreeFragment"
+        android:label="" />
+</navigation>

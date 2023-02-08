@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="err_unavailable_intent">@string/raw_err_unavailable_intent</string>
+    <string name="common_required">@string/raw_common_required</string>
+    <string name="common_ok">@string/raw_common_ok</string>
+    <string name="common_close">@string/raw_common_close</string>
+</resources>

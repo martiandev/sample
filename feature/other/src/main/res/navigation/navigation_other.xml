@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation_other"
+    app:startDestination="@id/otherFragment">
+
+    <include app:graph="@navigation/navigation_user_info" />
+
+    <fragment
+        android:id="@+id/otherFragment"
+        android:name="team.standalone.feature.other.ui.other.OtherFragment"
+        android:label="@string/other_fragment_other_title"
+        tools:layout="@layout/other_fragment_other">
+        <action
+            android:id="@+id/actionOtherToNavigationUserInfo"
+            app:destination="@id/navigation_user_info"
+            app:enterAnim="@anim/enter_from_right"
+            app:exitAnim="@anim/exit_to_left"
+            app:popEnterAnim="@anim/enter_from_left"
+            app:popExitAnim="@anim/exit_to_right" />
+        <action
+            android:id="@+id/actionOtherFragmentToTermsOfService"
+            app:destination="@id/termsOfServiceFragment"
+            app:enterAnim="@anim/enter_from_right"
+            app:exitAnim="@anim/exit_to_left"
+            app:popEnterAnim="@anim/enter_from_left"
+            app:popExitAnim="@anim/exit_to_right"/>
+        <action
+            android:id="@+id/actionOtherFragmentToPrivacyPolicy"
+            app:destination="@id/privacyPolicyFragment"
+            app:enterAnim="@anim/enter_from_right"
+            app:exitAnim="@anim/exit_to_left"
+            app:popEnterAnim="@anim/enter_from_left"
+            app:popExitAnim="@anim/exit_to_right"/>
+        <action
+            android:id="@+id/actionOtherToWithdrawAccount"
+            app:destination="@id/withdrawAccountFragment"
+            app:enterAnim="@anim/enter_from_right"
+            app:exitAnim="@anim/exit_to_left"
+            app:popEnterAnim="@anim/enter_from_left"
+            app:popExitAnim="@anim/exit_to_right" />
+        <action
+            android:id="@+id/actionOtherToChatLanguageSettings"
+            app:destination="@id/chatLanguageSettingsBottomSheet" />
+    </fragment>
+    <fragment
+        android:id="@+id/termsOfServiceFragment"
+        android:name="team.standalone.feature.other.ui.termsofservice.TermsOfServiceFragment"
+        android:label="@string/other_fragment_terms_of_service_title"
+        tools:layout="@layout/other_fragment_terms_of_service" >
+        <deepLink
+            android:id="@+id/deepLinkTermsOfService"
+            app:uri="https://www.fumiya.com/terms-of-service" />
+    </fragment>
+    <fragment
+        android:id="@+id/privacyPolicyFragment"
+        android:name="team.standalone.feature.other.ui.privacypolicy.PrivacyPolicyFragment"
+        android:label="{title}"
+        tools:layout="@layout/other_fragment_privacy_policy">
+        <argument
+            android:name="title"
+            app:argType="string" />
+        <deepLink
+            android:id="@+id/deepLinkPrivacyPolicy"
+            app:uri="https://www.fumiya.com/privacy-policy?title={title}" />
+    </fragment>
+    <fragment
+        android:id="@+id/withdrawAccountFragment"
+        android:name="team.standalone.feature.other.ui.withdrawaccount.WithdrawAccountFragment"
+        android:label="@string/other_fragment_withdraw_account_title"
+        tools:layout="@layout/other_fragment_withdraw_account" />
+    <dialog
+        android:id="@+id/chatLanguageSettingsBottomSheet"
+        android:name="team.standalone.feature.other.ui.chatlanguagesettings.ChatLanguageSettingsBottomSheet"
+        android:label="@string/other_bottom_sheet_chat_language_settings_title"
+        tools:layout="@layout/other_bottom_sheet_chat_language_settings" />
+</navigation>

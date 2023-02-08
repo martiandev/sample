@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <color name="colorButtonPrimary">#313172</color>
+    <color name="colorButtonDisablePrimary">#A4A4A4</color>
+    <color name="colorInputLink">#FF8A00</color>
+    <color name="colorPrimaryLight">#FAFCFD</color>
+
+    <color name="colorInputHint">#4CA2CD</color>
+    <color name="colorInputError">#FF8A00</color>
+    <color name="green_200">#00BC81</color>
+
+    <color name="colorTransparent">#4CA2CD</color>
+
+    <color name="colorFumiyaTheme">#314780</color>
+    <color name="color_nav_tap">#CAEA09</color>
+
+    <color name="colorMenuMap">#007AB7</color>
+    <color name="colorMenuPark">#FF8A00</color>
+    <color name="colorMenuStation">#00BC81</color>
+    <color name="colorMenuBase">#313172</color>
+
+    <color name="purple_200">#FFBB86FC</color>
+    <color name="purple_500">#FF6200EE</color>
+    <color name="purple_700">#FF3700B3</color>
+    <color name="teal_200">#FF03DAC5</color>
+    <color name="teal_700">#FF018786</color>
+
+    <color name="textColorPrimary">@color/white</color>
+
+</resources>

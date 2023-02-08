@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="team.standalone.fumiya">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+
+    <queries>
+        <!-- Explicit apps you know in advance about: -->
+        <package android:name="com.zhiliaoapp.musically"/>
+        <package android:name="com.zhiliaoapp.musically.go"/>
+        <package android:name="com.ss.android.ugc.trill"/>
+        <package android:name="com.instagram.android"/>
+        <package android:name="com.google.android.youtube"/>
+        <package android:name="com.twitter.android"/>
+        <package android:name="com.facebook.katana"/>
+    </queries>
+
+    <application
+        android:name=".FumiyaApplication"
+        android:allowBackup="false"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:requestLegacyExternalStorage="true"
+        android:theme="@style/Theme.Fumiya">
+        <activity
+            android:name=".ui.auth.tutorial.TutorialActivity"
+            android:exported="true"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.Fumiya.Tutorial"
+            android:windowSoftInputMode="adjustPan">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".ui.auth.signin.AuthActivity"
+            android:exported="true"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.Fumiya.Auth"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name="team.standalone.feature.billing.BillingSubscriptionActivity"
+            android:exported="true"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name=".ui.park.video.VideoActivity"
+            android:exported="false"
+            android:noHistory="true"
+            android:launchMode="singleTask"
+            android:configChanges="orientation|screenSize" />
+        <activity
+            android:name=".ui.MainActivity"
+            android:exported="true"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan">
+            <nav-graph android:value="@navigation/mobile_navigation" />
+        </activity>
+        <activity
+            android:name=".ui.util.web.InAppWebViewActivity"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan">
+        </activity>
+
+        <!-- OneSignal -->
+        <meta-data
+            android:name="com.onesignal.NotificationServiceExtension"
+            android:value="team.standalone.fumiya.service.OneSignalService" />
+
+        <provider
+            android:name="androidx.core.content.FileProvider"
+            android:authorities="${applicationId}.fileprovider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/file_paths" />
+        </provider>
+    </application>
+</manifest>

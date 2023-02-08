@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- activity: member subscription -->
+    <string name="iv_check">Payment Check</string>
+    <string name="billing_subscription_title_header">@string/raw_common_subscription_title_header</string>
+    <string name="billing_subscription_message">@string/raw_common_billing_subscription_message</string>
+    <string name="billing_subscription_payment_steps">@string/raw_common_subscribe_payment_steps</string>
+    <string name="billing_subscription_precautions">@string/raw_member_subscription_precautions</string>
+    <string name="billing_subscription_precautions_list">@string/raw_common_subscription_precautions_list</string>
+    <string name="billing_subscription_btn_description">@string/raw_billing_subscription_btn_description</string>
+    <string name="billing_subscription_pay_later">@string/raw_common_subscription_pay_later</string>
+    <string name="billing_subscription_subscribe_benefits_one">@string/raw_common_subscribe_benefits_one</string>
+    <string name="billing_subscription_subscribe_benefits_two">@string/raw_common_subscribe_benefits_two</string>
+    <string name="billing_subscription_subscribe_benefits_three">@string/raw_common_subscribe_benefits_three</string>
+    <string name="billing_subscription_dialog_btn_close">@string/raw_common_close</string>
+    <string name="billing_subscription_dialog_title_failed">@string/raw_billing_subscription_dialog_title_failed</string>
+    <string name="billing_subscription_dialog_message_failed">@string/raw_billing_subscription_dialog_message_failed</string>
+    <string name="billing_subscription_dialog_title_cancelled">@string/raw_billing_subscription_dialog_title_cancelled</string>
+    <string name="billing_subscription_dialog_message_cancelled">@string/raw_billing_subscription_dialog_message_cancelled</string>
+    <string name="billing_subscription_dialog_title_success">@string/raw_billing_subscription_dialog_title_success</string>
+    <string name="billing_subscription_dialog_message_success">@string/raw_billing_subscription_dialog_message_success</string>
+    <string name="billing_subscription_dialog_title_already_owned">@string/raw_billing_subscription_dialog_title_already_owned</string>
+    <string name="billing_subscription_dialog_message_already_owned">@string/raw_billing_subscription_dialog_message_already_owned</string>
+    <string name="billing_subscription_dialog_title_pending">@string/raw_billing_subscription_dialog_title_pending</string>
+    <string name="billing_subscription_dialog_message_pending">@string/raw_billing_subscription_dialog_message_pending</string>
+
+</resources>

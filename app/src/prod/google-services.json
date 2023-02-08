@@ -1,0 +1,46 @@
+{
+  "project_info": {
+    "project_number": "340441776485",
+    "project_id": "fumiya-9f207",
+    "storage_bucket": "fumiya-9f207.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:340441776485:android:de6e97801392cec4b2218c",
+        "android_client_info": {
+          "package_name": "team.standalone.fumiya"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "340441776485-8ilasc0a523hgsqvn99c4agqcpu0lljl.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCqNboxk4ctbetpTzLfPcfSIS9TMzsc6tk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "340441776485-8ilasc0a523hgsqvn99c4agqcpu0lljl.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "340441776485-hf8pul6kl3556sm1a3r8p57e898r8t6f.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "team.standalone.fumiya"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

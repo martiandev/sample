@@ -1,0 +1,918 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="fragment"
+            type="team.standalone.fumiya.ui.auth.signup.signupdetails.SignUpPreviewDetailsFragment" />
+
+        <variable
+            name="viewModel"
+            type="team.standalone.fumiya.ui.auth.signup.signupdetails.SignUpPreviewDetailsViewModel" />
+    </data>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/background">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="20dp"
+            tools:context=".ui.auth.signup.signupdetails.SignUpPreviewDetailsFragment">
+
+            <TextView
+                android:id="@+id/tv_header_description"
+                style="@style/FumiyaTextStyleBold"
+                android:layout_marginTop="40dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:includeFontPadding="false"
+                android:textSize="16sp"
+                android:text="@string/fragment_sign_up_input_header"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:id="@+id/iv_steps"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="14dp"
+                android:contentDescription="@string/iv_steps"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tv_header_description"
+                app:srcCompat="@drawable/ic_form_step_05" />
+
+            <!-- nick name -->
+            <TextView
+                android:id="@+id/tv_label_nickname"
+                style="@style/FumiyaTextStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="40dp"
+                android:includeFontPadding="false"
+                android:text="@string/fragment_sign_up_input_label_nickname"
+                android:textFontWeight="400"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/iv_steps" />
+
+            <TextView
+                android:id="@+id/tv_nickname_required"
+                style="@style/FumiyaTextStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:background="@drawable/linear_all_radius"
+                android:includeFontPadding="false"
+                android:paddingStart="10dp"
+                android:paddingEnd="10dp"
+                android:text="@string/fragment_sign_up_input_label_mandatory"
+                android:textSize="12sp"
+                app:layout_constraintBottom_toBottomOf="@+id/tv_label_nickname"
+                app:layout_constraintStart_toEndOf="@+id/tv_label_nickname"
+                app:layout_constraintTop_toTopOf="@+id/tv_label_nickname" />
+
+            <TextView
+                android:id="@+id/tv_nick_name"
+                style="@style/FumiyaTextStyle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:maxLines="1"
+                android:layout_marginTop="15dp"
+                android:includeFontPadding="false"
+                android:textFontWeight="400"
+                android:text="@{viewModel.userData.nickName}"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tv_label_nickname" />
+
+            <View
+                android:id="@+id/view_nick_name"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginTop="12dp"
+                android:background="@color/white"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tv_nick_name" />
+
+            <TextView
+                android:id="@+id/tv_note_nick_name"
+                style="@style/FumiyaTextStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:text="@string/fragment_sign_up_input_label_nickname_note"
+                android:textFontWeight="400"
+                android:textSize="12sp"
+                android:includeFontPadding="false"
+                android:visibility="visible"
+                app:layout_constraintStart_toStartOf="@+id/view_nick_name"
+                app:layout_constraintTop_toBottomOf="@+id/view_nick_name" />
+
+            <!-- full name -->
+            <TextView
+                android:id="@+id/tv_label_full_name"
+                style="@style/FumiyaTextStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="32dp"
+                android:includeFontPadding="false"
+                android:text="@string/fragment_sign_up_input_label_full_name"
+                android:textFontWeight="400"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tv_note_nick_name" />
+
+            <TextView
+                android:id="@+id/tv_full_name_required"
+                style="@style/FumiyaTextStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:background="@drawable/linear_all_radius"
+                android:includeFontPadding="false"
+                android:paddingStart="10dp"
+                android:paddingEnd="10dp"
+                android:text="@string/fragment_sign_up_input_label_mandatory"
+                android:textSize="12sp"
+                app:layout_constraintBottom_toBottomOf="@+id/tv_label_full_name"
+                app:layout_constraintStart_toEndOf="@+id/tv_label_full_name"
+                app:layout_constraintTop_toTopOf="@+id/tv_label_full_name" />
+
+            <LinearLayout
+                android:id="@+id/linear_full_name"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:baselineAligned="false"
+                android:orientation="horizontal"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tv_label_full_name">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="12dp"
+                    android:layout_weight="0.5"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/tv_userlast"
+                        style="@style/FumiyaTextStyle"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginTop="15dp"
+                        android:includeFontPadding="false"
+                        android:maxLines="1"
+                        android:text="@{viewModel.userData.lastName}"
+                        android:textFontWeight="400" />
+
+                    <View
+                        android:id="@+id/view_full_name_last"
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:layout_marginTop="12dp"
+                        android:background="@color/white" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.5"
+                    android:layout_marginStart="12dp"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/tv_user_first"
+                        style="@style/FumiyaTextStyle"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginTop="15dp"
+                        android:includeFontPadding="false"
+                        android:maxLines="1"
+                        android:text="@{viewModel.userData.firstName}"
+                        android:textFontWeight="400" />
+
+                    <View
+                        android:id="@+id/view_full_name_first"
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:layout_marginTop="12dp"
+                        android:background="@color/white" />
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <!-- kana -->
+            <TextView
+                android:id="@+id/tv_label_kana_full_name"
+                style="@style/FumiyaTextStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="32dp"
+                android:includeFontPadding="false"
+                android:text="@string/fragment_sign_up_input_label_full_name_kana"
+                app:visibleGone="@{viewModel.kanaVisibility}"
+                android:textFontWeight="400"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/linear_full_name" />
+
+            <LinearLayout
+                android:id="@+id/linear_kana_full_name"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                app:visibleGone="@{viewModel.kanaVisibility}"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                android:baselineAligned="false"
+                app:layout_constraintTop_toBottomOf="@+id/tv_label_kana_full_name">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="12dp"
+                    android:layout_weight="0.5"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/tv_user_last_kana"
+                        style="@style/FumiyaTextStyle"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginTop="15dp"
+                        android:layout_marginEnd="12dp"
+                        android:includeFontPadding="false"
+                        android:maxLines="1"
+                        android:text="@{viewModel.userData.lastNameKana}"
+                        android:textFontWeight="400" />
+
+                    <View
+                        android:id="@+id/view_kana_name_last"
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:layout_marginTop="12dp"
+                        android:background="@color/white" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="12dp"
+                    android:layout_weight="0.5"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/tv_user_first_kana"
+                        style="@style/FumiyaTextStyle"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginTop="15dp"
+                        android:includeFontPadding="false"
+                        android:maxLines="1"
+                        android:text="@{viewModel.userData.firstNameKana}"
+                        android:textFontWeight="400" />
+
+                    <View
+                        android:id="@+id/view_kana_name_first"
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:layout_marginTop="12dp"
+                        android:background="@color/white" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <!-- bday -->
+            <LinearLayout
+                android:id="@+id/linear_bday"
+                android:layout_width="wrap_content"
+                android:layout_marginTop="32dp"
+                android:layout_height="wrap_content"
+                app:layout_constraintStart_toStartOf="parent"
+                app:visibleIfNotNull="@{viewModel.userData.birthdate}"
+                app:layout_constraintTop_toBottomOf="@+id/linear_kana_full_name">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/tv_label_birth_date"
+                        style="@style/FumiyaTextStyle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:includeFontPadding="false"
+                        android:text="@string/fragment_sign_up_input_label_date_of_birth"
+                        android:textFontWeight="400" />
+
+                    <LinearLayout
+                        android:id="@+id/linear_birth_date"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="15dp"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/tv_year_value"
+                            style="@style/FumiyaTextStyle"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:includeFontPadding="false"
+                            android:text="@{Integer.toString(viewModel.userData.birthdate.year)}"
+                            android:textAlignment="viewEnd"
+                            android:textFontWeight="400" />
+
+                        <TextView
+                            android:id="@+id/tv_year_label"
+                            style="@style/FumiyaTextStyle"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="5dp"
+                            android:layout_marginEnd="5dp"
+                            android:includeFontPadding="false"
+                            android:text="/"
+                            android:textFontWeight="400" />
+
+                        <TextView
+                            android:id="@+id/tv_month_value"
+                            style="@style/FumiyaTextStyle"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:includeFontPadding="false"
+                            android:text="@{Integer.toString(viewModel.userData.birthdate.month)}"
+                            android:textAlignment="viewEnd"
+                            android:textFontWeight="400" />
+
+                        <TextView
+                            android:id="@+id/tv_month_label"
+                            style="@style/FumiyaTextStyle"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="5dp"
+                            android:layout_marginEnd="5dp"
+                            android:includeFontPadding="false"
+                            android:text="/"
+                            android:textFontWeight="400" />
+
+                        <TextView
+                            android:id="@+id/tv_day_value"
+                            style="@style/FumiyaTextStyle"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:includeFontPadding="false"
+                            android:text="@{Integer.toString(viewModel.userData.birthdate.day)}"
+                            android:textAlignment="viewEnd"
+                            android:textFontWeight="400" />
+                    </LinearLayout>
+
+                    <View
+                        android:id="@+id/view_birth_date"
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:layout_marginTop="12dp"
+                        android:background="@color/white"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/linear_birth_date" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <!-- gender -->
+            <LinearLayout
+                android:id="@+id/linear_gender"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="32dp"
+                app:visibleIfNoSelected="@{viewModel.gender}"
+                android:orientation="vertical"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/linear_bday">
+
+                <TextView
+                    android:id="@+id/tv_label_gender"
+                    style="@style/FumiyaTextStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:includeFontPadding="false"
+                    android:text="@string/fragment_sign_up_input_label_gender"
+                    android:textFontWeight="400" />
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/constraint_gender"
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    android:layout_marginTop="8dp">
+
+                    <LinearLayout
+                        android:id="@+id/linear_gender_woman"
+                        style="?android:attr/buttonBarButtonStyle"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="0dp"
+                        android:background="@drawable/btn_start_radius"
+                        android:backgroundTint="@{viewModel.gender == 1 ? @color/colorPrimaryDark : @color/white}"
+                        android:clickable="false"
+                        app:layout_constraintEnd_toStartOf="@+id/linear_gender_man"
+                        app:layout_constraintHorizontal_bias="0.5"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:gravity="center"
+                            android:includeFontPadding="false"
+                            android:text="@string/fragment_sign_up_input_gender_woman"
+                            android:textColor="@{viewModel.gender == 1 ? @color/white : @color/colorPrimary}" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/linear_gender_man"
+                        style="?android:attr/buttonBarButtonStyle"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="1dp"
+                        android:layout_marginEnd="1dp"
+                        android:background="@color/white"
+                        android:backgroundTint="@{viewModel.gender == 2 ? @color/colorPrimaryDark : @color/white}"
+                        android:clickable="false"
+                        android:textColor="@color/white"
+                        app:layout_constraintEnd_toStartOf="@+id/linear_gender_other"
+                        app:layout_constraintHorizontal_bias="0.5"
+                        app:layout_constraintStart_toEndOf="@+id/linear_gender_woman"
+                        app:layout_constraintTop_toTopOf="parent">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:gravity="center"
+                            android:includeFontPadding="false"
+                            android:text="@string/fragment_sign_up_input_gender_man"
+                            android:textColor="@{viewModel.gender == 2 ? @color/white : @color/colorPrimary}" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/linear_gender_other"
+                        style="?android:attr/buttonBarButtonStyle"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="0dp"
+                        android:background="@drawable/btn_end_radius"
+                        android:backgroundTint="@{viewModel.gender == 3 ? @color/colorPrimaryDark : @color/white}"
+                        android:clickable="false"
+                        android:textColor="@color/white"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.5"
+                        app:layout_constraintStart_toEndOf="@+id/linear_gender_man"
+                        app:layout_constraintTop_toTopOf="parent">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:gravity="center"
+                            android:includeFontPadding="false"
+                            android:text="@string/fragment_sign_up_input_gender_other"
+                            android:textColor="@{viewModel.gender == 3 ? @color/white : @color/colorPrimary}" />
+                    </LinearLayout>
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </LinearLayout>
+
+            <!-- address note -->
+            <TextView
+                android:id="@+id/tv_note_address"
+                style="@style/FumiyaTextStyle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="40dp"
+                android:background="@drawable/textview_border"
+                android:includeFontPadding="false"
+                android:padding="15dp"
+                android:text="@string/fragment_sign_up_input_note_address"
+                android:textFontWeight="400"
+                android:textSize="12sp"
+                android:visibility="visible"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/linear_gender" />
+
+            <!-- postal -->
+            <LinearLayout
+                android:id="@+id/linear_postal_code"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="32dp"
+                android:orientation="vertical"
+                app:visibleIfNotEmpty="@{viewModel.userData.address.postalCode}"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tv_note_address">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/tv_label_postal_code"
+                        style="@style/FumiyaTextStyle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:includeFontPadding="false"
+                        android:text="@string/fragment_sign_up_input_label_postal_code"
+                        android:textFontWeight="400" />
+
+                    <TextView
+                        android:id="@+id/tv_postal"
+                        style="@style/FumiyaTextStyle"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="15dp"
+                        android:includeFontPadding="false"
+                        android:maxLength="7"
+                        android:maxLines="1"
+                        android:text="@{viewModel.userData.address.postalCode}"
+                        android:textFontWeight="400" />
+
+                    <View
+                        android:id="@+id/view_postal"
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:layout_marginTop="12dp"
+                        android:background="@color/white" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <!-- address prefecture -->
+            <LinearLayout
+                android:id="@+id/linear_address_prefecture"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="32dp"
+                app:visibleIfNotEmpty="@{viewModel.userData.address.prefecture}"
+                android:orientation="vertical"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/linear_postal_code">
+
+                <TextView
+                    android:id="@+id/tv_label_address_prefecture"
+                    style="@style/FumiyaTextStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:includeFontPadding="false"
+                    android:text="@string/fragment_sign_up_input_label_address_prefecture"
+                    android:textFontWeight="400" />
+
+                <TextView
+                    android:id="@+id/tv_address_prefecture"
+                    style="@style/FumiyaTextStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="15dp"
+                    android:includeFontPadding="false"
+                    android:maxLines="1"
+                    android:textFontWeight="400"
+                    android:text="@{viewModel.userData.address.prefecture}" />
+
+                <View
+                    android:id="@+id/view_address_prefecture"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginTop="12dp"
+                    android:background="@color/white" />
+
+            </LinearLayout>
+
+            <!-- city -->
+            <LinearLayout
+                android:id="@+id/linear_city"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="32dp"
+                android:orientation="vertical"
+                app:visibleIfNotEmpty="@{viewModel.userData.address.city}"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/linear_address_prefecture">
+
+                <TextView
+                    android:id="@+id/tv_label_city"
+                    style="@style/FumiyaTextStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:includeFontPadding="false"
+                    android:text="@string/fragment_sign_up_input_label_address_city"
+                    android:textFontWeight="400" />
+
+                <TextView
+                    android:id="@+id/tv_city"
+                    style="@style/FumiyaTextStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="15dp"
+                    android:includeFontPadding="false"
+                    android:maxLines="1"
+                    android:textFontWeight="400"
+                    android:text="@{viewModel.userData.address.city}" />
+
+                <View
+                    android:id="@+id/view_city"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginTop="12dp"
+                    android:background="@color/white" />
+            </LinearLayout>
+
+            <!-- address number -->
+            <LinearLayout
+                android:id="@+id/linear_address_number"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:visibleIfNotEmpty="@{viewModel.userData.address.number}"
+                android:layout_marginTop="32dp"
+                android:orientation="vertical"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/linear_city">
+
+                <TextView
+                    android:id="@+id/tv_lbl_address_number"
+                    style="@style/FumiyaTextStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:includeFontPadding="false"
+                    android:text="@string/fragment_sign_up_input_label_address_number"
+                    android:textFontWeight="400" />
+
+                <TextView
+                    android:id="@+id/tv_address_number"
+                    style="@style/FumiyaTextStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="15dp"
+                    android:includeFontPadding="false"
+                    android:maxLines="1"
+                    android:textFontWeight="400"
+                    android:text="@{viewModel.userData.address.number}" />
+
+                <View
+                    android:id="@+id/view_address_number"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginTop="12dp"
+                    android:background="@color/white" />
+
+            </LinearLayout>
+
+            <!-- address structure -->
+            <LinearLayout
+                android:id="@+id/linear_address_structure"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:visibleIfNotEmpty="@{viewModel.userData.address.structure}"
+                android:layout_marginTop="32dp"
+                android:orientation="vertical"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/linear_address_number">
+
+                <TextView
+                    android:id="@+id/tv_label_address_structure"
+                    style="@style/FumiyaTextStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:includeFontPadding="false"
+                    android:text="@string/fragment_sign_up_input_label_address_structure"
+                    android:textFontWeight="400" />
+
+                <TextView
+                    android:id="@+id/tv_address_structure"
+                    style="@style/FumiyaTextStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="15dp"
+                    android:includeFontPadding="false"
+                    android:maxLines="1"
+                    android:textFontWeight="400"
+                    android:text="@{viewModel.userData.address.structure}" />
+
+                <View
+                    android:id="@+id/view_address_structure"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginTop="12dp"
+                    android:background="@color/white" />
+
+            </LinearLayout>
+
+            <!-- phone number -->
+            <LinearLayout
+                android:id="@+id/linear_phone_number"
+                android:layout_width="match_parent"
+                app:visibleIfNotEmpty="@{viewModel.userData.phoneNumber}"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="32dp"
+                android:orientation="vertical"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/linear_address_structure">
+
+                <TextView
+                    android:id="@+id/tv_label_phone_number"
+                    style="@style/FumiyaTextStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:includeFontPadding="false"
+                    android:text="@string/fragment_sign_up_input_label_phone_number"
+                    android:textFontWeight="400" />
+
+                <TextView
+                    android:id="@+id/tv_phone_number"
+                    style="@style/FumiyaTextStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="15dp"
+                    android:includeFontPadding="false"
+                    android:maxLines="1"
+                    android:textFontWeight="400"
+                    android:text="@{viewModel.userData.phoneNumber}" />
+
+                <View
+                    android:id="@+id/view_phone_number"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginTop="12dp"
+                    android:background="@color/white" />
+            </LinearLayout>
+
+            <!-- about terms-->
+            <TextView
+                android:id="@+id/tv_label_about_terms"
+                style="@style/FumiyaTextStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="32dp"
+                android:includeFontPadding="false"
+                android:text="@string/fragment_sign_up_input_label_about_terms"
+                android:textFontWeight="400"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/linear_phone_number" />
+
+            <TextView
+                android:id="@+id/tv_about_terms_required"
+                style="@style/FumiyaTextStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:background="@drawable/linear_all_radius"
+                android:includeFontPadding="false"
+                android:paddingStart="10dp"
+                android:paddingEnd="10dp"
+                android:text="@string/fragment_sign_up_input_label_mandatory"
+                android:textSize="12sp"
+                app:layout_constraintBottom_toBottomOf="@+id/tv_label_about_terms"
+                app:layout_constraintStart_toEndOf="@+id/tv_label_about_terms"
+                app:layout_constraintTop_toTopOf="@+id/tv_label_about_terms" />
+
+            <!-- app terms -->
+            <TextView
+                android:id="@+id/tv_app_terms"
+                android:onClick="@{() -> viewModel.navigateToAppTerms()}"
+                style="@style/FumiyaTextStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:clickable="true"
+                android:foreground="?attr/selectableItemBackground"
+                android:includeFontPadding="false"
+                android:padding="5dp"
+                android:text="@string/fragment_sign_up_input_label_app_terms"
+                android:textFontWeight="400"
+                android:textSize="12sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tv_label_about_terms"
+                app:underlineText="@{true}"
+                tools:ignore="TooManyViews" />
+
+            <com.google.android.material.imageview.ShapeableImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintBottom_toBottomOf="@+id/tv_app_terms"
+                app:layout_constraintStart_toEndOf="@+id/tv_app_terms"
+                app:layout_constraintTop_toTopOf="@+id/tv_app_terms"
+                app:srcCompat="@drawable/ic_baseline_keyboard_arrow_right_24"
+                app:tint="@color/icon_primary" />
+
+            <!-- privacy terms -->
+            <TextView
+                android:id="@+id/tv_privacy"
+                android:onClick="@{() -> viewModel.navigateToPrivacyPolicy()}"
+                style="@style/FumiyaTextStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:clickable="true"
+                android:foreground="?attr/selectableItemBackground"
+                android:includeFontPadding="false"
+                android:padding="5dp"
+                android:text="@string/fragment_sign_up_input_label_privacy"
+                android:textFontWeight="400"
+                android:textSize="12sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tv_app_terms"
+                app:underlineText="@{true}"
+                tools:ignore="TooManyViews" />
+
+            <com.google.android.material.imageview.ShapeableImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintBottom_toBottomOf="@+id/tv_privacy"
+                app:layout_constraintStart_toEndOf="@+id/tv_privacy"
+                app:layout_constraintTop_toTopOf="@+id/tv_privacy"
+                app:srcCompat="@drawable/ic_baseline_keyboard_arrow_right_24"
+                app:tint="@color/icon_primary" />
+
+            <TextView
+                android:id="@+id/tv_agreed"
+                style="@style/FumiyaTextStyle"
+                android:text="@string/fragment_sign_up_input_label_agreed"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="28dp"
+                android:includeFontPadding="false"
+                android:textFontWeight="400"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tv_privacy" />
+
+            <!-- back button -->
+            <Button
+                android:id="@+id/btn_back"
+                style="@style/ButtonStyle"
+                android:backgroundTint="@color/white"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:layout_marginTop="40dp"
+                android:layout_marginBottom="40dp"
+                android:fontFamily="@font/noto_sans_jp_regular"
+                android:includeFontPadding="false"
+                android:onClick="@{() -> viewModel.navigateToBackToInputDetails()}"
+                android:text="@string/fragment_sign_up_preview_label_back"
+                android:textFontWeight="400"
+                android:textSize="16sp"
+                android:textColor="@color/colorButtonPrimary"
+                app:cornerRadius="24dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tv_agreed"
+                app:strokeColor="@color/colorButtonPrimary"
+                app:layout_constraintStart_toStartOf="parent"
+                app:strokeWidth="1dp"
+                tools:ignore="TooManyViews" />
+
+            <!-- confirm button -->
+            <Button
+                android:id="@+id/btn_confirm"
+                style="@style/ButtonStyle"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginBottom="40dp"
+                android:fontFamily="@font/noto_sans_jp_regular"
+                android:includeFontPadding="false"
+                android:onClick="@{() -> viewModel.navigateToSubscriptionScreen()}"
+                android:text="@string/fragment_sign_up_preview_label_register"
+                android:textFontWeight="400"
+                android:textSize="16sp"
+                app:cornerRadius="24dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/btn_back"
+                app:strokeColor="@color/white"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:strokeWidth="1dp" />
+
+            <!-- progress bar -->
+            <ProgressBar
+                android:id="@+id/progressBar"
+                style="?android:attr/progressBarStyle"
+                android:visibility="gone"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+</layout>

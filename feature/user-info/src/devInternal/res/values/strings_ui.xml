@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- bottom sheet: user photo options -->
+    <string name="user_info_bottom_sheet_user_photo_options_title">Photo Options</string>
+    <string name="user_info_bottom_sheet_user_photo_options_item_delete_photo">Delete current photo</string>
+    <string name="user_info_bottom_sheet_user_photo_options_item_gallery">Photo Library</string>
+    <string name="user_info_bottom_sheet_user_photo_options_item_camera">Capture Image</string>
+    <!-- fragment: crop photo -->
+    <string name="user_info_fragment_crop_photo_title">Crop Photo</string>
+    <string name="user_info_fragment_crop_photo_btn_apply">Apply</string>
+    <!-- fragment: re sign in -->
+    <string name="user_info_fragment_re_sign_in_title">Login</string>
+    <string name="user_info_fragment_re_sign_in_update_email_title">Change Email</string>
+    <string name="user_info_fragment_re_sign_in_update_email_description">Please input current password to change your email.</string>
+    <string name="user_info_fragment_re_sign_in_update_password_title">Change Password</string>
+    <string name="user_info_fragment_re_sign_in_update_password_description">Please input current password to change your password.</string>
+    <string name="user_info_fragment_re_sign_in_hint_password">Password</string>
+    <string name="user_info_fragment_re_sign_in_btn_forgot_password">Do you forget your password?</string>
+    <string name="user_info_fragment_re_sign_in_btn_next">Next</string>
+    <!-- fragment: reset password -->
+    <string name="user_info_fragment_reset_password_title">Reset Password</string>
+    <string name="user_info_fragment_reset_password_description">Please enter your currently registered email address and press the "Send" button. An email containing the URL of the password change page will be sent to your email address.</string>
+    <string name="user_info_fragment_reset_password_note">* Please set your device to receive emails from "noreply@fumiya-9f207.firebaseapp.com".</string>
+    <string name="user_info_fragment_reset_password_hint_email">Email</string>
+    <string name="user_info_fragment_reset_password_btn_reset">Next</string>
+    <!-- fragment: reset password finish -->
+    <string name="user_info_fragment_reset_password_finish_title">Reset Password</string>
+    <string name="user_info_fragment_reset_password_finish_description">
+        A password change email has been sent to the email address you entered.\n\n
+        Please access the URL in the body of the email and follow the reissue procedure.\n\n
+        * Please note that it may take some time to reply to your email.\n\n
+        * The valid period of the return e-mail URL is within 24 hours. If you are unable to access within the validity period, please complete the procedure again from the beginning.
+    </string>
+    <string name="user_info_fragment_reset_password_finish_btn_back_to_top">Back to Login</string>
+    <!-- fragment: update email -->
+    <string name="user_info_fragment_update_email_title">Change Email</string>
+    <string name="user_info_fragment_update_email_email">Current email:\n%s</string>
+    <string name="user_info_fragment_update_email_hint_new_email">New Email</string>
+    <string name="user_info_fragment_update_email_hint_new_email_confirmation">New Email (confirmation)</string>
+    <string name="user_info_fragment_update_email_btn_update">Update</string>
+    <!-- fragment: update email finish -->
+    <string name="user_info_fragment_update_email_finish_title">Change Email</string>
+    <string name="user_info_fragment_update_email_finish_description">
+        We have sent an "e-mail address change notification e-mail" to your new e-mail address.\n\n
+        Please access the URL described in the body of the email and verify your email address.\n\n
+        * Please note that it may take some time to reply to emails.\n\n
+        * The URL of the return email is valid within 24 hours. If you are unable to access within 24 hours, please start the procedure again from the beginning.
+    </string>
+    <string name="user_info_fragment_update_email_finish_btn_send_email_verification">Send confirmation email</string>
+    <string name="user_info_fragment_update_email_finish_btn_back_to_top">Back To Other</string>
+    <!-- fragment: update password -->
+    <string name="user_info_fragment_update_password_title">Update Password</string>
+    <string name="user_info_fragment_update_password_hint_new_password">New Password</string>
+    <string name="user_info_fragment_update_password_hint_new_password_confirmation">New Password (confirmation)</string>
+    <string name="user_info_fragment_update_password_helper_new_password">* Half-width alphanumeric characters 8 to 16 characters</string>
+    <string name="user_info_fragment_update_password_helper_new_password_confirmation">* Half-width alphanumeric characters 8 to 16 characters (confirmation)</string>
+    <string name="user_info_fragment_update_password_btn_update">Update</string>
+    <!-- fragment: update user -->
+    <string name="user_info_fragment_update_user_title">Update User</string>
+    <string name="user_info_fragment_update_user_label_gender">Gender</string>
+    <string name="user_info_fragment_update_user_hint_nickname">Nickname</string>
+    <string name="user_info_fragment_update_user_hint_name">Name</string>
+    <string name="user_info_fragment_update_user_hint_name_kana">Name Kana</string>
+    <string name="user_info_fragment_update_user_hint_first_name">First Name</string>
+    <string name="user_info_fragment_update_user_hint_last_name">Last Name</string>
+    <string name="user_info_fragment_update_user_hint_first_name_kana">First Name Kana</string>
+    <string name="user_info_fragment_update_user_hint_last_name_kana">Last Name Kana</string>
+    <string name="user_info_fragment_update_user_hint_birthdate">Birthdate</string>
+    <string name="user_info_fragment_update_user_hint_birthdate_year">年</string>
+    <string name="user_info_fragment_update_user_hint_birthdate_month">月</string>
+    <string name="user_info_fragment_update_user_hint_birthdate_day">日</string>
+    <string name="user_info_fragment_update_user_hint_address_postal_code">Postal Code</string>
+    <string name="user_info_fragment_update_user_hint_address_prefecture">Prefecture</string>
+    <string name="user_info_fragment_update_user_hint_address_city">City</string>
+    <string name="user_info_fragment_update_user_hint_address_number">Address Number</string>
+    <string name="user_info_fragment_update_user_hint_address_structure">Building name / Room number</string>
+    <string name="user_info_fragment_update_user_hint_phone_number">Phone Number</string>
+    <string name="user_info_fragment_update_user_helper_nickname">This is displayed for comments such as chat.</string>
+    <string name="user_info_fragment_update_user_note_address">Address is required when planning gifts, so please be sure to enter your address if you wish to participate. (Benefits will only be shipped within Japan.)</string>
+    <string name="user_info_fragment_update_user_btn_update">Update</string>
+    <!-- fragment: user info -->
+    <string name="user_info_fragment_user_info_title">User Information</string>
+    <string name="user_info_fragment_user_info_label_member_number">Member No. %s</string>
+    <string name="user_info_fragment_user_info_label_registered">Registered : %s</string>
+    <string name="user_info_fragment_user_info_label_subscription_expire_date">Subscription will be updated at %s</string>
+    <string name="user_info_fragment_user_info_label_purchase">Those who have previously purchased in-app purchases</string>
+    <string name="user_info_fragment_user_info_btn_update_user">Edit user information</string>
+    <string name="user_info_fragment_user_info_btn_update_email">Edit email</string>
+    <string name="user_info_fragment_user_info_btn_update_password">Edit password</string>
+    <string name="user_info_fragment_user_info_btn_restore_purchase">Restore Purchase</string>
+    <!-- dialog: select birthdate -->
+    <string name="user_info_dialog_select_birthdate_title">Select Birthdate</string>
+    <!-- dialog: update password success -->
+    <string name="user_info_dialog_update_password_success_title">Change Password</string>
+    <string name="user_info_dialog_update_password_success_message">Password is updated.</string>
+    <string name="user_info_dialog_update_password_success_btn_positive">OK</string>
+    <!-- dialog: update password error -->
+    <string name="user_info_dialog_update_password_error_title">Change Password</string>
+    <string name="user_info_dialog_update_password_error_message">Password could not be changed.</string>
+    <string name="user_info_dialog_update_password_error_btn_positive">OK</string>
+</resources>

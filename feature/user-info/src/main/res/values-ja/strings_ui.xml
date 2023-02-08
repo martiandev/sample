@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- bottom sheet: user photo options -->
+    <string name="user_info_bottom_sheet_user_photo_options_title">@string/raw_user_info_bottom_sheet_user_photo_options_title</string>
+    <string name="user_info_bottom_sheet_user_photo_options_item_delete_photo">@string/raw_user_info_bottom_sheet_user_photo_options_item_delete_photo</string>
+    <string name="user_info_bottom_sheet_user_photo_options_item_gallery">@string/raw_user_info_bottom_sheet_user_photo_options_item_gallery</string>
+    <string name="user_info_bottom_sheet_user_photo_options_item_camera">@string/raw_user_info_bottom_sheet_user_photo_options_item_camera</string>
+    <!-- fragment: crop photo -->
+    <string name="user_info_fragment_crop_photo_title">@string/raw_user_info_crop_photo_title</string>
+    <string name="user_info_fragment_crop_photo_btn_apply">@string/raw_user_info_crop_photo_btn_apply</string>
+    <!-- fragment: re sign in -->
+    <string name="user_info_fragment_re_sign_in_title">@string/raw_common_login</string>
+    <string name="user_info_fragment_re_sign_in_update_email_title">@string/raw_common_user_info_update_email_title</string>
+    <string name="user_info_fragment_re_sign_in_update_email_description">@string/raw_user_info_re_sign_in_update_email_description</string>
+    <string name="user_info_fragment_re_sign_in_update_password_title">@string/raw_common_user_info_update_password</string>
+    <string name="user_info_fragment_re_sign_in_update_password_description">@string/raw_user_info_re_sign_in_update_password_description</string>
+    <string name="user_info_fragment_re_sign_in_hint_password">@string/raw_common_password</string>
+    <string name="user_info_fragment_re_sign_in_btn_forgot_password">@string/raw_common_forgot_password</string>
+    <string name="user_info_fragment_re_sign_in_btn_next">@string/raw_common_next</string>
+    <!-- fragment: reset password -->
+    <string name="user_info_fragment_reset_password_title">@string/raw_common_reset_password</string>
+    <string name="user_info_fragment_reset_password_description">@string/raw_reset_password_description</string>
+    <string name="user_info_fragment_reset_password_note">@string/raw_common_reset_password_note</string>
+    <string name="user_info_fragment_reset_password_hint_email">@string/raw_common_email</string>
+    <string name="user_info_fragment_reset_password_btn_reset">@string/raw_common_next</string>
+    <!-- fragment: reset password finish -->
+    <string name="user_info_fragment_reset_password_finish_title">@string/raw_common_reset_password</string>
+    <string name="user_info_fragment_reset_password_finish_description">@string/raw_common_info_update_finish_description</string>
+    <string name="user_info_fragment_reset_password_finish_btn_back_to_top">@string/raw_common_back_to_login</string>
+    <!-- fragment: update email -->
+    <string name="user_info_fragment_update_email_title">@string/raw_common_user_info_update_email_title</string>
+    <string name="user_info_fragment_update_email_email">@string/raw_user_info_update_email_email</string>
+    <string name="user_info_fragment_update_email_hint_new_email">@string/raw_user_info_update_email_hint_new_email</string>
+    <string name="user_info_fragment_update_email_hint_new_email_confirmation">@string/raw_user_info_update_email_hint_new_email_confirmation</string>
+    <string name="user_info_fragment_update_email_helper_new_email">@string/raw_common_email</string>
+    <string name="user_info_fragment_update_email_helper_new_email_confirmation">@string/raw_common_email_confirmation</string>
+    <string name="user_info_fragment_update_email_btn_update">@string/raw_common_update_email</string>
+    <!-- fragment: update email finish -->
+    <string name="user_info_fragment_update_email_finish_title">@string/raw_common_user_info_update_email_title</string>
+    <string name="user_info_fragment_update_email_finish_description">@string/raw_common_info_update_finish_description</string>
+    <string name="user_info_fragment_update_email_finish_btn_send_email_verification">@string/raw_user_info_update_email_finish_btn_send_email_verification</string>
+    <string name="user_info_fragment_update_email_finish_btn_back_to_top">@string/raw_user_info_update_email_finish_btn_back_to_top</string>
+    <!-- fragment: update password -->
+    <string name="user_info_fragment_update_password_title">@string/raw_common_user_info_update_password</string>
+    <string name="user_info_fragment_update_password_hint_new_password">@string/raw_user_info_update_password_hint_new_password</string>
+    <string name="user_info_fragment_update_password_hint_new_password_confirmation">@string/raw_user_info_update_password_hint_new_password_confirmation</string>
+    <string name="user_info_fragment_update_password_helper_new_password">@string/raw_user_info_update_password_helper_new_password_confirmation</string>
+    <string name="user_info_fragment_update_password_helper_new_password_confirmation">@string/raw_user_info_update_password_helper_new_password_confirmation</string>
+    <string name="user_info_fragment_update_password_btn_update">@string/raw_common_user_info_update</string>
+    <!-- fragment: update user -->
+    <string name="user_info_fragment_update_user_title">@string/raw_user_info_update_user_title</string>
+    <string name="user_info_fragment_update_user_label_gender">@string/raw_common_gender</string>
+    <string name="user_info_fragment_update_user_hint_nickname">@string/raw_common_nickname</string>
+    <string name="user_info_fragment_update_user_hint_name">@string/raw_common_full_name</string>
+    <string name="user_info_fragment_update_user_hint_name_kana">@string/raw_common_full_name_kana</string>
+    <string name="user_info_fragment_update_user_hint_first_name">@string/raw_user_info_update_user_hint_first_name</string>
+    <string name="user_info_fragment_update_user_hint_last_name">@string/raw_user_info_update_user_hint_last_name</string>
+    <string name="user_info_fragment_update_user_hint_first_name_kana">@string/raw_user_info_update_user_hint_first_name_kana</string>
+    <string name="user_info_fragment_update_user_hint_last_name_kana">@string/raw_user_info_update_user_hint_last_name_kana</string>
+    <string name="user_info_fragment_update_user_hint_birthdate">@string/raw_common_date_of_birth</string>
+    <string name="user_info_fragment_update_user_hint_birthdate_year">@string/raw_common_year</string>
+    <string name="user_info_fragment_update_user_hint_birthdate_month">@string/raw_common_month</string>
+    <string name="user_info_fragment_update_user_hint_birthdate_day">@string/raw_common_day</string>
+    <string name="user_info_fragment_update_user_hint_address_postal_code">@string/raw_common_label_address_postal_code</string>
+    <string name="user_info_fragment_update_user_hint_address_prefecture">@string/raw_user_info_update_user_hint_address_prefecture</string>
+    <string name="user_info_fragment_update_user_hint_address_city">@string/raw_common_city</string>
+    <string name="user_info_fragment_update_user_hint_address_number">@string/raw_common_address_number</string>
+    <string name="user_info_fragment_update_user_hint_address_structure">@string/raw_common_address_structure</string>
+    <string name="user_info_fragment_update_user_hint_phone_number">@string/raw_user_info_update_user_hint_phone_number</string>
+    <string name="user_info_fragment_update_user_helper_nickname">@string/raw_common_nickname_note</string>
+    <string name="user_info_fragment_update_user_note_address">@string/raw_user_info_update_user_note_address</string>
+    <string name="user_info_fragment_update_user_btn_update">@string/raw_common_user_info_update</string>
+    <string name="user_info_fragment_update_user_btn_update_clear_date_of_birth">@string/raw_common_clear_date_of_birth</string>
+    <!-- fragment: user info -->
+    <string name="user_info_fragment_user_info_title">@string/raw_common_user_information</string>
+    <string name="user_info_fragment_user_info_label_member_number">@string/raw_user_info_label_member_number</string>
+    <string name="user_info_fragment_user_info_label_registered">@string/raw_user_info_label_registered</string>
+    <string name="user_info_fragment_user_info_label_subscription_expire_date">@string/raw_user_info_label_subscription_expire_date</string>
+    <string name="user_info_fragment_user_info_label_purchase">@string/raw_user_info_label_purchase</string>
+    <string name="user_info_fragment_user_info_btn_update_user">@string/raw_user_info_btn_update_user</string>
+    <string name="user_info_fragment_user_info_btn_update_email">@string/raw_user_info_btn_update_email</string>
+    <string name="user_info_fragment_user_info_btn_update_password">@string/raw_user_info_btn_update_password</string>
+    <string name="user_info_fragment_user_info_btn_restore_purchase">@string/raw_user_info_btn_restore_purchase</string>
+    <string name="user_info_fragment_user_info_label_salutation">様</string>
+    <!-- dialog: select birthdate -->
+    <string name="user_info_dialog_select_birthdate_title">@string/raw_user_info_dialog_select_birthdate_title</string>
+    <!-- dialog: update password success -->
+    <string name="user_info_dialog_update_password_success_title">@string/raw_common_user_info_update_password</string>
+    <string name="user_info_dialog_update_password_success_message">@string/raw_user_info_dialog_update_password_success_message</string>
+    <string name="user_info_dialog_update_password_success_btn_positive">@string/raw_common_ok</string>
+    <!-- dialog: update password error -->
+    <string name="user_info_dialog_update_password_error_title">@string/raw_common_user_info_update_password</string>
+    <string name="user_info_dialog_update_password_error_message">@string/raw_user_info_dialog_update_password_error_message</string>
+    <string name="user_info_dialog_update_password_error_btn_positive">@string/raw_common_ok</string>
+</resources>

@@ -1,0 +1,103 @@
+plugins {
+    id 'com.android.library'
+    id 'org.jetbrains.kotlin.android'
+    id 'org.jetbrains.kotlin.kapt'
+    id 'dagger.hilt.android.plugin'
+    id "com.google.protobuf" version "0.8.18"
+}
+
+android {
+    compileSdk config.compileSdk
+    defaultConfig {
+        minSdk config.minSdk
+        targetSdk config.targetSdk
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        consumerProguardFiles "consumer-rules.pro"
+    }
+    flavorDimensions 'environment'
+    productFlavors {
+        devInternal {
+            dimension 'environment'
+        }
+        dev {
+            dimension 'environment'
+        }
+        qa {
+            dimension 'environment'
+        }
+        staging {
+            dimension 'environment'
+        }
+        prod {
+            dimension 'environment'
+        }
+    }
+    buildTypes {
+        debug {
+        }
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        jvmTarget = JavaVersion.VERSION_1_8.toString()
+    }
+    variantFilter { variant ->
+        def names = variant.flavors*.name
+        if (variant.buildType.name == "release" && !names.contains("prod")) {
+            setIgnore(true)
+        }
+    }
+    kapt {
+        // use this to avoid nonexistent class when generating datastore factory
+        correctErrorTypes = true
+    }
+}
+
+dependencies {
+    // module dependency
+    implementation project(path: ':core:common')
+    // jetpack: architecture
+    implementation "androidx.datastore:datastore:$architecture.protoDataStore"
+    // dependency injection
+    implementation "com.google.dagger:hilt-android:$architecture.hilt"
+    kapt "com.google.dagger:hilt-compiler:$architecture.hilt"
+    // kotlinx
+    implementation "org.jetbrains.kotlinx:kotlinx-datetime:$kotlinx.datetime"
+    // utilities
+    implementation "com.google.protobuf:protobuf-javalite:$versions.protobuf"
+    // jetpack: foundation
+    testImplementation "junit:junit:$foundation.junit"
+    testImplementation "com.google.truth:truth:$foundation.truth"
+    testImplementation "androidx.arch.core:core-testing:$foundation.coreTesting"
+    testImplementation "org.jetbrains.kotlinx:kotlinx-coroutines-test:$foundation.kotlinxCoroutinesTest"
+    testImplementation "org.mockito:mockito-core:$foundation.mockitoCore"
+    testImplementation "org.mockito:mockito-inline:$foundation.mockitoInline"
+    testImplementation "io.mockk:mockk:$foundation.mockk"
+    testImplementation "app.cash.turbine:turbine:$foundation.turbine"
+    androidTestImplementation "androidx.test.ext:junit:$foundation.androidJUnit"
+    androidTestImplementation "com.google.truth:truth:$foundation.truth"
+    androidTestImplementation "org.jetbrains.kotlinx:kotlinx-coroutines-test:$foundation.kotlinxCoroutinesTest"
+    androidTestImplementation "androidx.test.espresso:espresso-core:$foundation.androidEspresso"
+    androidTestImplementation "app.cash.turbine:turbine:$foundation.turbine"
+}
+
+protobuf {
+    protoc {
+        artifact = "com.google.protobuf:protoc:$versions.protobuf"
+    }
+    generateProtoTasks {
+        all().each { task ->
+            task.builtins {
+                java {
+                    option 'lite'
+                }
+            }
+        }
+    }
+}

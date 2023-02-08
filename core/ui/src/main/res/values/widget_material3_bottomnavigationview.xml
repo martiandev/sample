@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="Material3.BottomNavigationView" parent="Widget.Material3.BottomNavigationView" />
+
+    <!-- TODO: INSERT CUSTOM HERE -->
+
+    <style name="Material3.BottomNavigationView.Indicator" parent="Widget.Material3.BottomNavigationView.ActiveIndicator">
+        <item name="android:color">#00ffffff</item>
+    </style>
+
+</resources>

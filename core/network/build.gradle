@@ -1,0 +1,98 @@
+plugins {
+    id 'com.android.library'
+    id 'org.jetbrains.kotlin.android'
+    id 'org.jetbrains.kotlin.kapt'
+    id 'dagger.hilt.android.plugin'
+}
+
+android {
+    compileSdk config.compileSdk
+    defaultConfig {
+        minSdk config.minSdk
+        targetSdk config.targetSdk
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        consumerProguardFiles "consumer-rules.pro"
+    }
+    flavorDimensions 'environment'
+    productFlavors {
+        devInternal {
+            dimension 'environment'
+        }
+        dev {
+            dimension 'environment'
+        }
+        qa {
+            dimension 'environment'
+        }
+        staging {
+            dimension 'environment'
+        }
+        prod {
+            dimension 'environment'
+        }
+    }
+    buildTypes {
+        debug {
+        }
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        jvmTarget = JavaVersion.VERSION_1_8.toString()
+    }
+    variantFilter { variant ->
+        def names = variant.flavors*.name
+        if (variant.buildType.name == "release" && !names.contains("prod")) {
+            setIgnore(true)
+        }
+    }
+}
+
+dependencies {
+    implementation project(path: ':core:common')
+    // dependency injection
+    implementation "com.google.dagger:hilt-android:$architecture.hilt"
+    kapt "com.google.dagger:hilt-compiler:$architecture.hilt"
+    // network
+    implementation "com.squareup.retrofit2:retrofit:$versions.retrofit"
+    implementation "com.squareup.retrofit2:converter-gson:$versions.retrofit"
+    implementation "com.squareup.retrofit2:retrofit-mock:$versions.retrofit"
+    implementation "com.squareup.retrofit2:converter-moshi:$versions.retrofit"
+    implementation "com.squareup.okhttp3:logging-interceptor:$versions.okhttp"
+    implementation "com.squareup.okhttp3:okhttp:$versions.okhttp"
+    implementation "com.squareup.okhttp3:mockwebserver:$versions.okhttp"
+    implementation "com.squareup.moshi:moshi:$versions.moshi"
+    implementation "com.squareup.moshi:moshi-kotlin:$versions.moshi"
+    // firebase
+    implementation platform("com.google.firebase:firebase-bom:$versions.firebase")
+    implementation 'com.google.firebase:firebase-crashlytics-ktx'
+    implementation 'com.google.firebase:firebase-analytics-ktx'
+    implementation('com.google.firebase:firebase-auth-ktx') {
+        exclude module: "play-services-safetynet"
+    }
+    implementation 'com.google.firebase:firebase-dynamic-links-ktx'
+    implementation 'com.google.firebase:firebase-firestore-ktx'
+    implementation 'com.google.firebase:firebase-perf-ktx'
+    implementation 'com.google.firebase:firebase-config-ktx'
+    implementation 'com.google.firebase:firebase-functions-ktx'
+    implementation 'com.google.firebase:firebase-storage-ktx'
+    // kotlinx
+    implementation "org.jetbrains.kotlinx:kotlinx-datetime:$kotlinx.datetime"
+    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-play-services:$kotlinx.coroutinesPlayServices"
+    // jetpack: foundation
+    testImplementation "junit:junit:$foundation.junit"
+    testImplementation "com.google.truth:truth:$foundation.truth"
+    testImplementation "androidx.arch.core:core-testing:$foundation.coreTesting"
+    testImplementation "org.jetbrains.kotlinx:kotlinx-coroutines-test:$foundation.kotlinxCoroutinesTest"
+    testImplementation "org.mockito:mockito-core:$foundation.mockitoCore"
+    testImplementation "org.mockito:mockito-inline:$foundation.mockitoInline"
+    testImplementation "io.mockk:mockk:$foundation.mockk"
+    androidTestImplementation "androidx.test.ext:junit:$foundation.androidJUnit"
+    androidTestImplementation "androidx.test.espresso:espresso-core:$foundation.androidEspresso"
+}

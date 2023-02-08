@@ -1,0 +1,284 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="fragment"
+            type="team.standalone.fumiya.ui.auth.signup.signup.SignUpFragment" />
+
+        <variable
+            name="viewModel"
+            type="team.standalone.fumiya.ui.auth.signup.signup.SignUpViewModel" />
+    </data>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/background">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="20dp"
+            tools:context=".ui.auth.signup.signup.SignUpFragment">
+
+            <TextView
+                android:id="@+id/tv_header_description"
+                style="@style/FumiyaTextStyleBold"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="40dp"
+            android:includeFontPadding="false"
+            android:text="@string/fragment_sign_up_header_description"
+            android:textSize="16sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/iv_steps"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="14dp"
+            android:contentDescription="@string/iv_steps"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_header_description"
+            app:srcCompat="@drawable/ic_form_step_01" />
+
+        <TextView
+            android:id="@+id/tv_message"
+            style="@style/FumiyaTextStyle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:includeFontPadding="false"
+            android:text="@string/fragment_sign_up_message"
+            android:textFontWeight="400"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/iv_steps" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/textInputLayout3"
+            style="@style/Material3.TextInputLayout"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:includeFontPadding="false"
+            app:errorEnabled="true"
+            app:formError="@{@string/fragment_sign_up_validation_invalid_email}"
+            app:formHasError="@{viewModel.emailAddress.hasError}"
+            app:errorIconTint="@color/colorInputError"
+            app:errorTextColor="@color/colorInputError"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_label_email">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/ti_email_address"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                android:fontFamily="@font/noto_sans_jp_regular"
+                android:includeFontPadding="false"
+                android:inputType="textEmailAddress"
+                android:maxLines="1"
+                android:text="@={viewModel.emailAddress.input}"
+                android:textColor="@color/black"
+                android:textFontWeight="400"
+                android:textSize="14sp" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:id="@+id/textInputLayout4"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:includeFontPadding="false"
+            app:errorEnabled="true"
+            app:hintAnimationEnabled="false"
+            app:hintEnabled="false"
+            app:errorIconTint="@color/colorInputError"
+            app:errorTextColor="@color/colorInputError"
+            app:hintTextColor="@color/colorInputHint"
+            app:formError="@{@string/fragment_sign_up_validation_invalid_password}"
+            app:formHasError="@{viewModel.password.hasError}"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_label_password">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/ti_password"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                android:fontFamily="@font/noto_sans_jp_regular"
+                android:textColorHint="@color/colorInputHint"
+                android:hint="@string/fragment_sign_up_hint_password"
+                android:includeFontPadding="false"
+                android:inputType="textPassword"
+                android:maxLength="16"
+                android:maxLines="1"
+                android:text="@={viewModel.password.input}"
+                android:textColor="@color/black"
+                android:textFontWeight="400"
+                android:textSize="14sp" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <LinearLayout
+            android:id="@+id/linear_password"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="end"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textInputLayout4">
+
+            <TextView
+                android:id="@+id/tv_show_password"
+                style="@style/FumiyaTextStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:clickable="true"
+                android:foreground="?attr/selectableItemBackground"
+                android:includeFontPadding="false"
+                android:padding="5dp"
+                android:text="@string/fragment_sign_in_show_password"
+                android:textFontWeight="400"
+                android:textSize="12sp"
+                app:underlineText="@{true}" />
+        </LinearLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:id="@+id/textInputLayout5"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:includeFontPadding="false"
+            app:errorEnabled="true"
+            app:hintAnimationEnabled="false"
+            app:hintEnabled="false"
+            app:errorIconTint="@color/colorInputError"
+            app:errorTextColor="@color/colorInputError"
+            app:formError="@{@string/fragment_sign_up_validation_invalid_confirm_password}"
+            app:formHasError="@{viewModel.confirmPassword.hasError}"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView84">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/ti_confirm_password"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                android:textColorHint="@color/colorInputHint"
+                android:fontFamily="@font/noto_sans_jp_regular"
+                android:hint="@string/fragment_sign_up_hint_confirm_password"
+                android:includeFontPadding="false"
+                android:inputType="textPassword"
+                android:maxLength="16"
+                android:maxLines="1"
+                android:text="@={viewModel.confirmPassword.input}"
+                android:textColor="@color/black"
+                android:textFontWeight="400"
+                android:textSize="14sp" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <LinearLayout
+            android:id="@+id/linear_confirm_password"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="end"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textInputLayout5">
+
+            <TextView
+                android:id="@+id/tv_show_confirm_password"
+                style="@style/FumiyaTextStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:clickable="true"
+                android:foreground="?attr/selectableItemBackground"
+                android:includeFontPadding="false"
+                android:padding="5dp"
+                android:textFontWeight="400"
+                android:textSize="12sp"
+                android:text="@string/fragment_sign_in_show_password"
+                app:underlineText="@{true}" />
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/btn_register"
+            style="@style/ButtonStyle"
+            android:layout_width="0dp"
+            android:layout_height="48dp"
+            android:layout_marginTop="14dp"
+            android:fontFamily="@font/noto_sans_jp_regular"
+            android:includeFontPadding="false"
+            android:onClick="@{() -> viewModel.validateInputs()}"
+            android:text="@string/fragment_sign_up_btn_register"
+            android:textFontWeight="400"
+            android:textSize="16sp"
+            app:cornerRadius="24dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/linear_confirm_password"
+            app:strokeColor="@color/white"
+            app:strokeWidth="1dp" />
+
+        <TextView
+            android:id="@+id/tv_label_email"
+            style="@style/FumiyaTextStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="25dp"
+            android:includeFontPadding="false"
+            android:text="@string/fragment_sign_up_label_email"
+            android:textFontWeight="400"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_message" />
+
+        <TextView
+            android:id="@+id/tv_label_password"
+            style="@style/FumiyaTextStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:includeFontPadding="false"
+            android:text="@string/fragment_sign_up_label_password"
+            android:textFontWeight="400"
+            android:paddingBottom="5dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textInputLayout3" />
+
+        <TextView
+            android:id="@+id/textView84"
+            style="@style/FumiyaTextStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:paddingBottom="5dp"
+            android:includeFontPadding="false"
+            android:text="@string/fragment_sign_up_label_confirm_password"
+            android:textFontWeight="400"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textInputLayout4" />
+
+        <ProgressBar
+            android:id="@+id/progressBar"
+            style="?android:attr/progressBarStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+</layout>

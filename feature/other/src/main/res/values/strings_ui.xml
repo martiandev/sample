@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- activity: license -->
+    <string name="other_activity_license_title">@string/raw_common_license_information</string>
+    <!-- bottom sheet: chat language settings -->
+    <string name="other_bottom_sheet_chat_language_settings_title">@string/raw_other_bottom_sheet_chat_language_settings_title</string>
+    <string name="other_bottom_sheet_chat_language_settings_content_title">@string/raw_other_bottom_sheet_chat_language_settings_title</string>
+    <string name="other_bottom_sheet_chat_language_settings_content_description"></string>
+    <string name="other_bottom_sheet_chat_language_settings_item_default_title">@string/raw_other_bottom_sheet_chat_language_settings_item_default_title</string>
+    <string name="other_bottom_sheet_chat_language_settings_item_default_description">@string/raw_other_bottom_sheet_chat_language_settings_item_default_description</string>
+    <string name="other_bottom_sheet_chat_language_settings_item_japanese_title">@string/raw_other_bottom_sheet_chat_language_settings_item_japanese_title</string>
+    <string name="other_bottom_sheet_chat_language_settings_item_japanese_description">@string/raw_other_bottom_sheet_chat_language_settings_item_japanese_description</string>
+    <string name="other_bottom_sheet_chat_language_settings_item_english_title">@string/raw_other_bottom_sheet_chat_language_settings_item_english_title</string>
+    <string name="other_bottom_sheet_chat_language_settings_item_english_description">@string/raw_other_bottom_sheet_chat_language_settings_item_english_description</string>
+    <string name="other_bottom_sheet_chat_language_settings_item_simplified_chinese_title">@string/raw_other_bottom_sheet_chat_language_settings_item_simplified_chinese_title</string>
+    <string name="other_bottom_sheet_chat_language_settings_item_simplified_chinese_description">@string/raw_other_bottom_sheet_chat_language_settings_item_simplified_chinese_description</string>
+    <string name="other_bottom_sheet_chat_language_settings_item_traditional_chinese_title">@string/raw_other_bottom_sheet_chat_language_settings_item_traditional_chinese_title</string>
+    <string name="other_bottom_sheet_chat_language_settings_item_traditional_chinese_description">@string/raw_other_bottom_sheet_chat_language_settings_item_traditional_chinese_description</string>
+    <string name="other_bottom_sheet_chat_language_settings_item_korean_title">@string/raw_other_bottom_sheet_chat_language_settings_item_korean_title</string>
+    <string name="other_bottom_sheet_chat_language_settings_item_korean_description">@string/raw_other_bottom_sheet_chat_language_settings_item_korean_description</string>
+    <!-- fragment: other -->
+    <string name="other_fragment_other_title">@string/raw_other_other_title</string>
+    <string name="other_fragment_other_label_app_version">@string/raw_other_other_label_app_version</string>
+    <string name="other_fragment_other_label_about_app">@string/raw_other_other_label_about_app</string>
+    <string name="other_fragment_other_btn_user_information">@string/raw_common_user_information</string>
+    <string name="other_fragment_other_btn_chat_language_settings">@string/raw_other_bottom_sheet_chat_language_settings_title</string>
+    <string name="other_fragment_other_btn_privacy_policy">@string/raw_common_privacy_policy_title</string>
+    <string name="other_fragment_other_btn_terms_of_service">@string/raw_common_terms_of_service</string>
+    <string name="other_fragment_other_btn_transaction_law">@string/raw_other_other_btn_transaction_law</string>
+    <string name="other_fragment_other_btn_license">@string/raw_common_license_information</string>
+    <string name="other_fragment_other_btn_faq">@string/raw_other_other_btn_faq</string>
+    <string name="other_fragment_other_btn_delete_account">@string/raw_common_withdraw_account</string>
+    <string name="other_fragment_other_btn_sign_out">@string/raw_common_sign_out</string>
+    <!-- fragment: withdraw account -->
+    <string name="other_fragment_withdraw_account_title">@string/raw_common_withdraw_account</string>
+    <string name="other_fragment_withdraw_account_description">@string/raw_other_withdraw_account_description</string>
+    <string name="other_fragment_withdraw_account_hint_email">@string/raw_common_email</string>
+    <string name="other_fragment_withdraw_account_hint_password">@string/raw_common_password</string>
+    <string name="other_fragment_withdraw_account_btn_forgot_password">@string/raw_common_forgot_password</string>
+    <string name="other_fragment_withdraw_account_btn_next">@string/raw_common_next</string>
+    <!-- fragment: terms of service -->
+    <string name="other_fragment_terms_of_service_title">@string/raw_common_terms_of_service</string>
+    <!-- fragment: privacy policy -->
+    <string name="other_fragment_privacy_policy_title">@string/raw_common_privacy_policy_title</string>
+    <!-- dialog: withdraw account confirmation -->
+    <string name="other_dialog_withdraw_account_confirmation_title">@string/raw_other_dialog_withdraw_account_confirmation_title</string>
+    <string name="other_dialog_withdraw_account_confirmation_message">@string/raw_other_dialog_withdraw_account_confirmation_message</string>
+    <string name="other_dialog_withdraw_account_confirmation_btn_negative">@string/raw_common_cancel</string>
+    <string name="other_dialog_withdraw_account_confirmation_btn_positive">@string/raw_common_ok</string>
+    <!-- dialog: withdraw account success -->
+    <string name="other_dialog_withdraw_account_success_title">@string/raw_other_dialog_withdraw_account_success_title</string>
+    <string name="other_dialog_withdraw_account_success_message">@string/raw_other_dialog_withdraw_account_success_message</string>
+    <string name="other_dialog_withdraw_account_success_btn_positive">@string/raw_common_ok</string>
+    <!-- dialog: delete account warning -->
+    <string name="other_dialog_delete_account_warning_title">@string/raw_other_dialog_delete_account_warning_title</string>
+    <string name="other_dialog_delete_account_warning_message">@string/raw_other_dialog_delete_account_warning_message</string>
+    <string name="other_dialog_delete_account_warning_message_item_1">@string/raw_other_dialog_delete_account_warning_message_item_1</string>
+    <string name="other_dialog_delete_account_warning_message_item_2">@string/raw_other_dialog_delete_account_warning_message_item_2</string>
+    <string name="other_dialog_delete_account_warning_message_item_3">@string/raw_common_dialog_delete_account_warning_message_item</string>
+    <string name="other_dialog_delete_account_warning_btn_negative">@string/raw_common_cancel</string>
+    <string name="other_dialog_delete_account_warning_btn_positive">@string/raw_common_ok</string>
+    <!-- dialog: sign out confirmation -->
+    <string name="other_dialog_sign_out_confirmation_title">@string/raw_other_dialog_sign_out_confirmation_title</string>
+    <string name="other_dialog_sign_out_confirmation_message">@string/raw_other_dialog_sign_out_confirmation_message</string>
+    <string name="other_dialog_sign_out_confirmation_btn_negative">@string/raw_other_dialog_sign_out_confirmation_btn_negative</string>
+    <string name="other_dialog_sign_out_confirmation_btn_positive">@string/raw_other_dialog_sign_out_confirmation_btn_positive</string>
+</resources>

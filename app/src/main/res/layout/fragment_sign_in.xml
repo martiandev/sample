@@ -1,0 +1,257 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="team.standalone.fumiya.ui.auth.signin.SignInViewModel" />
+    </data>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/background">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="20dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:context="team.standalone.fumiya.ui.auth.signin.SignInFragment">
+
+        <TextView
+            android:id="@+id/tv_description"
+            style="@style/FumiyaTextStyle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="@string/fragment_sign_in_message"
+            android:textFontWeight="400"
+            android:textSize="14sp"
+            app:layout_constraintBottom_toTopOf="@+id/btn_to_sign_up"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <Button
+            android:id="@+id/btn_to_sign_up"
+            style="@style/ButtonStyle"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:layout_marginTop="16dp"
+            android:fontFamily="@font/noto_sans_jp_regular"
+            android:includeFontPadding="false"
+            android:onClick="@{()-> viewModel.register()}"
+            android:text="@string/fragment_sign_in_btn_sign_up"
+            android:textFontWeight="400"
+            android:textSize="16sp"
+            app:cornerRadius="24dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_description"
+            app:strokeColor="@color/white"
+            app:strokeWidth="1dp" />
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:layout_marginEnd="8dp"
+            android:background="@color/white"
+            app:layout_constraintBottom_toBottomOf="@+id/tv_click_here"
+            app:layout_constraintEnd_toStartOf="@+id/tv_click_here"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/tv_click_here" />
+
+        <TextView
+            android:id="@+id/tv_click_here"
+            style="@style/FumiyaTextStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="60dp"
+            android:includeFontPadding="false"
+            android:text="@string/fragment_sign_in_click_here"
+            android:textAlignment="center"
+            android:textFontWeight="400"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/btn_to_sign_up" />
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:layout_marginStart="8dp"
+            android:background="@color/white"
+            app:layout_constraintBottom_toBottomOf="@+id/tv_click_here"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toEndOf="@+id/tv_click_here"
+            app:layout_constraintTop_toTopOf="@+id/tv_click_here" />
+
+        <TextView
+            android:id="@+id/tv_label_email"
+            style="@style/FumiyaTextStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="22dp"
+            android:includeFontPadding="false"
+            android:text="@string/fragment_sign_in_label_email"
+            android:textFontWeight="400"
+            app:layout_constraintBottom_toTopOf="@+id/til_email_address"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_click_here" />
+
+        <TextView
+            android:id="@+id/tv_label_password"
+            style="@style/FumiyaTextStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:includeFontPadding="false"
+            android:text="@string/fragment_sign_in_label_password"
+            android:textFontWeight="400"
+            app:layout_constraintBottom_toTopOf="@+id/til_password"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/til_email_address" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/til_email_address"
+            style="@style/Material3.TextInputLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:includeFontPadding="false"
+            app:errorEnabled="true"
+            app:errorIconTint="@color/colorInputError"
+            app:formError="@{viewModel.emailAddress.errMsg}"
+            app:formHasError="@{viewModel.emailAddress.hasError}"
+            app:errorTextColor="@color/colorInputError"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_label_email">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/ti_email_address"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                android:fontFamily="@font/noto_sans_jp_regular"
+                android:includeFontPadding="false"
+                android:inputType="textEmailAddress"
+                android:maxLines="1"
+                android:text="@={viewModel.emailAddress.input}"
+                android:textColor="@color/black"
+                android:textFontWeight="400"
+                android:textSize="14sp" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/til_password"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:includeFontPadding="false"
+            app:errorEnabled="true"
+            app:errorIconTint="@color/colorInputError"
+            app:formError="@{viewModel.password.errMsg}"
+            app:formHasError="@{viewModel.password.hasError}"
+            app:errorTextColor="@color/colorInputError"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_label_password">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/ti_password"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                android:fontFamily="@font/noto_sans_jp_regular"
+                android:includeFontPadding="false"
+                android:inputType="textPassword"
+                android:maxLength="16"
+                android:maxLines="1"
+                android:text="@={viewModel.password.input}"
+                android:textColor="@color/black"
+                android:textFontWeight="400"
+                android:textSize="14sp" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <LinearLayout
+            android:id="@+id/linear_password"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="end"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/til_password">
+
+            <TextView
+                android:id="@+id/tv_show_password"
+                style="@style/FumiyaTextStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:clickable="true"
+                android:foreground="?attr/selectableItemBackground"
+                android:includeFontPadding="false"
+                android:padding="5dp"
+                android:text="@string/fragment_sign_in_show_password"
+                android:textFontWeight="400"
+                android:textSize="12sp"
+                app:underlineText="@{true}" />
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/btn_login"
+            style="@style/ButtonStyle"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:layout_marginTop="29dp"
+            android:fontFamily="@font/noto_sans_jp_regular"
+            android:includeFontPadding="false"
+            android:onClick="@{() -> viewModel.login()}"
+            android:text="@string/fragment_sign_in_btn_login"
+            android:textFontWeight="400"
+            android:textSize="16sp"
+            app:cornerRadius="24dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/linear_password"
+            app:strokeColor="@color/white"
+            app:strokeWidth="1dp" />
+
+        <TextView
+            android:id="@+id/tv_forgot_password"
+            style="@style/FumiyaTextStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="6dp"
+            android:clickable="true"
+            android:foreground="?attr/selectableItemBackground"
+            android:includeFontPadding="false"
+            android:onClick="@{() -> viewModel.forgotPassword()}"
+            android:padding="5dp"
+            android:text="@string/fragment_sign_in_forgot_password"
+            android:textFontWeight="400"
+            android:textSize="12sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/btn_login"
+            app:underlineText="@{true}" />
+
+        <ProgressBar
+            android:id="@+id/progressBar"
+            style="?android:attr/progressBarStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+</layout>

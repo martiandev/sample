@@ -1,0 +1,79 @@
+plugins {
+    id 'com.android.library'
+    id 'org.jetbrains.kotlin.android'
+    id 'org.jetbrains.kotlin.kapt'
+    id 'dagger.hilt.android.plugin'
+}
+
+android {
+    compileSdk config.compileSdk
+    defaultConfig {
+        minSdk config.minSdk
+        targetSdk config.targetSdk
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        consumerProguardFiles "consumer-rules.pro"
+    }
+    buildFeatures {
+        viewBinding true
+        dataBinding true
+    }
+    flavorDimensions 'environment'
+    productFlavors {
+        devInternal {
+            dimension 'environment'
+        }
+        dev {
+            dimension 'environment'
+        }
+        qa {
+            dimension 'environment'
+        }
+        staging {
+            dimension 'environment'
+        }
+        prod {
+            dimension 'environment'
+        }
+    }
+    buildTypes {
+        debug {
+        }
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        jvmTarget = JavaVersion.VERSION_1_8.toString()
+    }
+    variantFilter { variant ->
+        def names = variant.flavors*.name
+        if (variant.buildType.name == "release" && !names.contains("prod")) {
+            setIgnore(true)
+        }
+    }
+}
+
+dependencies {
+    // jetpack: architecture
+    implementation "androidx.navigation:navigation-fragment-ktx:${architecture.navigation}"
+    // jetpack: foundation
+    implementation "androidx.activity:activity-ktx:$foundation.activityKtx"
+    implementation "androidx.fragment:fragment-ktx:$foundation.fragmentKtx"
+    testImplementation "junit:junit:$foundation.junit"
+    androidTestImplementation "androidx.test.ext:junit:$foundation.androidJUnit"
+    androidTestImplementation "androidx.test.espresso:espresso-core:$foundation.androidEspresso"
+    // jetpack: ui
+    implementation "com.google.android.material:material:$ui.material"
+    // dependency injection
+    implementation "com.google.dagger:hilt-android:$architecture.hilt"
+    kapt "com.google.dagger:hilt-compiler:$architecture.hilt"
+    // utilities
+    implementation "com.jakewharton.timber:timber:$versions.timber"
+    implementation "com.github.bumptech.glide:glide:${versions.glide}"
+    implementation "commons-io:commons-io:${versions.commonsIo}"
+}

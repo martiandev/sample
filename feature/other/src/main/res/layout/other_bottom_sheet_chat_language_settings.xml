@@ -1,0 +1,336 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <import
+            alias="SETTINGS_LANGUAGE"
+            type="team.standalone.core.data.domain.model.Settings.Language" />
+
+        <variable
+            name="bottomSheet"
+            type="team.standalone.feature.other.ui.chatlanguagesettings.ChatLanguageSettingsBottomSheet" />
+
+        <variable
+            name="viewModel"
+            type="team.standalone.feature.other.ui.chatlanguagesettings.ChatLanguageSettingsViewModel" />
+
+        <variable
+            name="settings"
+            type="team.standalone.core.data.domain.model.Settings" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:orientation="vertical"
+        android:paddingBottom="@dimen/padding">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="@dimen/padding">
+
+            <!-- content: title -->
+            <com.google.android.material.textview.MaterialTextView
+                style="@style/Material3.TextView.BottomSheet.Title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="@string/other_bottom_sheet_chat_language_settings_content_title" />
+
+            <!-- content: description -->
+            <com.google.android.material.textview.MaterialTextView
+                style="@style/Material3.TextView.BottomSheet.Description"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="@string/other_bottom_sheet_chat_language_settings_content_description"
+                app:visibleGone="@{false}" />
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/divider"
+            android:background="@color/chat_language_settings_divider" />
+
+        <!-- item: default -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:onClick="@{() -> viewModel.selectLanguage(SETTINGS_LANGUAGE.DEFAULT)}"
+            android:orientation="horizontal"
+            android:padding="@dimen/padding">
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <!-- item: title -->
+                <com.google.android.material.textview.MaterialTextView
+                    style="@style/Material3.TextView.BottomSheet.Item.Title"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/other_bottom_sheet_chat_language_settings_item_default_title" />
+
+                <!-- item: description -->
+                <com.google.android.material.textview.MaterialTextView
+                    style="@style/Material3.TextView.BottomSheet.Item.Description"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/other_bottom_sheet_chat_language_settings_item_default_description" />
+            </LinearLayout>
+
+            <!-- item: icon -->
+            <com.google.android.material.imageview.ShapeableImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:srcCompat="@drawable/ic_baseline_check_24"
+                app:tint="@color/chat_language_settings_check"
+                app:visibleHidden="@{settings.language == SETTINGS_LANGUAGE.DEFAULT}" />
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/divider"
+            android:layout_marginStart="@dimen/margin"
+            android:layout_marginEnd="@dimen/margin"
+            android:background="@color/chat_language_settings_divider" />
+
+        <!-- item: japanese -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:onClick="@{() -> viewModel.selectLanguage(SETTINGS_LANGUAGE.JAPANESE)}"
+            android:orientation="horizontal"
+            android:padding="@dimen/padding">
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <!-- item: title -->
+                <com.google.android.material.textview.MaterialTextView
+                    style="@style/Material3.TextView.BottomSheet.Item.Title"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/other_bottom_sheet_chat_language_settings_item_japanese_title" />
+
+                <!-- item: description -->
+                <com.google.android.material.textview.MaterialTextView
+                    style="@style/Material3.TextView.BottomSheet.Item.Description"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/other_bottom_sheet_chat_language_settings_item_japanese_description" />
+            </LinearLayout>
+
+            <!-- item: icon -->
+            <com.google.android.material.imageview.ShapeableImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:srcCompat="@drawable/ic_baseline_check_24"
+                app:tint="@color/chat_language_settings_check"
+                app:visibleHidden="@{settings.language == SETTINGS_LANGUAGE.JAPANESE}" />
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/divider"
+            android:layout_marginStart="@dimen/margin"
+            android:layout_marginEnd="@dimen/margin"
+            android:background="@color/chat_language_settings_divider" />
+
+        <!-- item: english -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:onClick="@{() -> viewModel.selectLanguage(SETTINGS_LANGUAGE.ENGLISH)}"
+            android:orientation="horizontal"
+            android:padding="@dimen/padding">
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <!-- item: title -->
+                <com.google.android.material.textview.MaterialTextView
+                    style="@style/Material3.TextView.BottomSheet.Item.Title"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/other_bottom_sheet_chat_language_settings_item_english_title" />
+
+                <!-- item: description -->
+                <com.google.android.material.textview.MaterialTextView
+                    style="@style/Material3.TextView.BottomSheet.Item.Description"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/other_bottom_sheet_chat_language_settings_item_english_description" />
+            </LinearLayout>
+
+            <!-- item: icon -->
+            <com.google.android.material.imageview.ShapeableImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:srcCompat="@drawable/ic_baseline_check_24"
+                app:tint="@color/chat_language_settings_check"
+                app:visibleHidden="@{settings.language == SETTINGS_LANGUAGE.ENGLISH}" />
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/divider"
+            android:layout_marginStart="@dimen/margin"
+            android:layout_marginEnd="@dimen/margin"
+            android:background="@color/chat_language_settings_divider" />
+
+        <!-- item: simplified chinese -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:onClick="@{() -> viewModel.selectLanguage(SETTINGS_LANGUAGE.SIMPLIFIED_CHINESE)}"
+            android:orientation="horizontal"
+            android:padding="@dimen/padding">
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <!-- item: title -->
+                <com.google.android.material.textview.MaterialTextView
+                    style="@style/Material3.TextView.BottomSheet.Item.Title"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/other_bottom_sheet_chat_language_settings_item_simplified_chinese_title" />
+
+                <!-- item: description -->
+                <com.google.android.material.textview.MaterialTextView
+                    style="@style/Material3.TextView.BottomSheet.Item.Description"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/other_bottom_sheet_chat_language_settings_item_simplified_chinese_description" />
+            </LinearLayout>
+
+            <!-- item: icon -->
+            <com.google.android.material.imageview.ShapeableImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:srcCompat="@drawable/ic_baseline_check_24"
+                app:tint="@color/chat_language_settings_check"
+                app:visibleHidden="@{settings.language == SETTINGS_LANGUAGE.SIMPLIFIED_CHINESE}" />
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/divider"
+            android:layout_marginStart="@dimen/margin"
+            android:layout_marginEnd="@dimen/margin"
+            android:background="@color/chat_language_settings_divider" />
+
+        <!-- item: traditional chinese -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:onClick="@{() -> viewModel.selectLanguage(SETTINGS_LANGUAGE.TRADITIONAL_CHINESE)}"
+            android:orientation="horizontal"
+            android:padding="@dimen/padding">
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <!-- item: title -->
+                <com.google.android.material.textview.MaterialTextView
+                    style="@style/Material3.TextView.BottomSheet.Item.Title"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/other_bottom_sheet_chat_language_settings_item_traditional_chinese_title" />
+
+                <!-- item: description -->
+                <com.google.android.material.textview.MaterialTextView
+                    style="@style/Material3.TextView.BottomSheet.Item.Description"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/other_bottom_sheet_chat_language_settings_item_traditional_chinese_description" />
+            </LinearLayout>
+
+            <!-- item: icon -->
+            <com.google.android.material.imageview.ShapeableImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:srcCompat="@drawable/ic_baseline_check_24"
+                app:tint="@color/chat_language_settings_check"
+                app:visibleHidden="@{settings.language == SETTINGS_LANGUAGE.TRADITIONAL_CHINESE}" />
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/divider"
+            android:layout_marginStart="@dimen/margin"
+            android:layout_marginEnd="@dimen/margin"
+            android:background="@color/chat_language_settings_divider" />
+
+        <!-- item: korean -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:onClick="@{() -> viewModel.selectLanguage(SETTINGS_LANGUAGE.KOREAN)}"
+            android:orientation="horizontal"
+            android:padding="@dimen/padding">
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <!-- item: title -->
+                <com.google.android.material.textview.MaterialTextView
+                    style="@style/Material3.TextView.BottomSheet.Item.Title"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/other_bottom_sheet_chat_language_settings_item_korean_title" />
+
+                <!-- item: description -->
+                <com.google.android.material.textview.MaterialTextView
+                    style="@style/Material3.TextView.BottomSheet.Item.Description"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/other_bottom_sheet_chat_language_settings_item_korean_description" />
+            </LinearLayout>
+
+            <!-- item: icon -->
+            <com.google.android.material.imageview.ShapeableImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:srcCompat="@drawable/ic_baseline_check_24"
+                app:tint="@color/chat_language_settings_check"
+                app:visibleHidden="@{settings.language == SETTINGS_LANGUAGE.KOREAN}" />
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/divider"
+            android:layout_marginStart="@dimen/margin"
+            android:layout_marginEnd="@dimen/margin"
+            android:background="@color/chat_language_settings_divider" />
+    </LinearLayout>
+</layout>

@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- activity: license -->
+    <string name="other_activity_license_title">License Information</string>
+    <!-- bottom sheet: chat language settings -->
+    <string name="other_bottom_sheet_chat_language_settings_title">Chat Language Settings</string>
+    <string name="other_bottom_sheet_chat_language_settings_content_title">Chat Language Settings</string>
+    <string name="other_bottom_sheet_chat_language_settings_content_description"></string>
+    <string name="other_bottom_sheet_chat_language_settings_item_default_title">Not Specified</string>
+    <string name="other_bottom_sheet_chat_language_settings_item_default_description">Default</string>
+    <string name="other_bottom_sheet_chat_language_settings_item_japanese_title">Japanese</string>
+    <string name="other_bottom_sheet_chat_language_settings_item_japanese_description">Japanese</string>
+    <string name="other_bottom_sheet_chat_language_settings_item_english_title">English</string>
+    <string name="other_bottom_sheet_chat_language_settings_item_english_description">English</string>
+    <string name="other_bottom_sheet_chat_language_settings_item_simplified_chinese_title">Simplified Chinese</string>
+    <string name="other_bottom_sheet_chat_language_settings_item_simplified_chinese_description">Simplified Chinese</string>
+    <string name="other_bottom_sheet_chat_language_settings_item_traditional_chinese_title">Traditional Chinese</string>
+    <string name="other_bottom_sheet_chat_language_settings_item_traditional_chinese_description">Traditional Chinese</string>
+    <string name="other_bottom_sheet_chat_language_settings_item_korean_title">Korean</string>
+    <string name="other_bottom_sheet_chat_language_settings_item_korean_description">Korean</string>
+    <!-- fragment: other -->
+    <string name="other_fragment_other_title">Other</string>
+    <string name="other_fragment_other_label_app_version">App Version</string>
+    <string name="other_fragment_other_label_about_app">About this app</string>
+    <string name="other_fragment_other_btn_user_information">User Information</string>
+    <string name="other_fragment_other_btn_chat_language_settings">Chat Language Settings</string>
+    <string name="other_fragment_other_btn_privacy_policy">Privacy Policy</string>
+    <string name="other_fragment_other_btn_terms_of_service">Terms of Service</string>
+    <string name="other_fragment_other_btn_transaction_law">Specified Commercial Transactions Law</string>
+    <string name="other_fragment_other_btn_license">License</string>
+    <string name="other_fragment_other_btn_faq">FAQ</string>
+    <string name="other_fragment_other_btn_delete_account">About Delete Account</string>
+    <string name="other_fragment_other_btn_sign_out">Logout</string>
+    <!-- fragment: withdraw account -->
+    <string name="other_fragment_withdraw_account_title">Withdraw Account</string>
+    <string name="other_fragment_withdraw_account_description">To delete account, please enter your current password.</string>
+    <string name="other_fragment_withdraw_account_hint_email">Email</string>
+    <string name="other_fragment_withdraw_account_hint_password">Password</string>
+    <string name="other_fragment_withdraw_account_btn_forgot_password">Do you forget your password?</string>
+    <string name="other_fragment_withdraw_account_btn_next">Next</string>
+    <!-- fragment: terms of service -->
+    <string name="other_fragment_terms_of_service_title">Terms of Service</string>
+    <!-- fragment: privacy policy -->
+    <string name="other_fragment_privacy_policy_title">Privacy Policy</string>
+    <!-- dialog: withdraw account confirmation -->
+    <string name="other_dialog_withdraw_account_confirmation_title">Delete Account</string>
+    <string name="other_dialog_withdraw_account_confirmation_message">Are you sure?</string>
+    <string name="other_dialog_withdraw_account_confirmation_btn_negative">No</string>
+    <string name="other_dialog_withdraw_account_confirmation_btn_positive">Yes</string>
+    <!-- dialog: withdraw account success -->
+    <string name="other_dialog_withdraw_account_success_title">Completed delete account</string>
+    <string name="other_dialog_withdraw_account_success_message">Thank you.</string>
+    <string name="other_dialog_withdraw_account_success_btn_positive">OK</string>
+    <!-- dialog: delete account warning -->
+    <string name="other_dialog_delete_account_warning_title">Notes on withdrawal</string>
+    <string name="other_dialog_delete_account_warning_message">Please be sure to check the following before performing the withdrawal procedure.</string>
+    <string name="other_dialog_delete_account_warning_message_item_1">・You will not be able to use paid content after you withdraw.</string>
+    <string name="other_dialog_delete_account_warning_message_item_2">・All data will be deleted. Even if you rejoin after canceling your membership, you will not be able to use your current membership number or registration information again.</string>
+    <string name="other_dialog_delete_account_warning_message_item_3_1">・Before you leave</string>
+    <string name="other_dialog_delete_account_warning_message_item_3_2">Cancellation of subscription</string>
+    <string name="other_dialog_delete_account_warning_message_item_3_3">is required.</string>
+    <string name="other_dialog_delete_account_warning_btn_negative">Cancel</string>
+    <string name="other_dialog_delete_account_warning_btn_positive">OK</string>
+    <!-- dialog: sign out confirmation -->
+    <string name="other_dialog_sign_out_confirmation_title">Sign Out</string>
+    <string name="other_dialog_sign_out_confirmation_message">Are you sure to logout?\nWhen you log out, the app exits.</string>
+    <string name="other_dialog_sign_out_confirmation_btn_negative">Cancel</string>
+    <string name="other_dialog_sign_out_confirmation_btn_positive">OK</string>
+</resources>

@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation_user_info"
+    app:startDestination="@id/userInfoFragment">
+
+    <action
+        android:id="@+id/actionExitUserInfoGraph"
+        app:enterAnim="@anim/enter_from_right"
+        app:exitAnim="@anim/exit_to_left"
+        app:popEnterAnim="@anim/enter_from_left"
+        app:popExitAnim="@anim/exit_to_right"
+        app:popUpTo="@id/navigation_user_info"
+        app:popUpToInclusive="true" />
+
+    <fragment
+        android:id="@+id/userInfoFragment"
+        android:name="team.standalone.feature.userinfo.ui.userinfo.UserInfoFragment"
+        android:label="@string/user_info_fragment_user_info_title"
+        tools:layout="@layout/user_info_fragment_user_info">
+        <action
+            android:id="@+id/actionUserInfoToUpdateUser"
+            app:destination="@id/updateUserFragment"
+            app:enterAnim="@anim/enter_from_right"
+            app:exitAnim="@anim/exit_to_left"
+            app:popEnterAnim="@anim/enter_from_left"
+            app:popExitAnim="@anim/exit_to_right" />
+        <action
+            android:id="@+id/actionUserInfoToReSignIn"
+            app:destination="@id/reSignInFragment"
+            app:enterAnim="@anim/enter_from_right"
+            app:exitAnim="@anim/exit_to_left"
+            app:popEnterAnim="@anim/enter_from_left"
+            app:popExitAnim="@anim/exit_to_right" />
+        <action
+            android:id="@+id/actionUserInfoToCropPhoto"
+            app:destination="@id/cropPhotoFragment"
+            app:enterAnim="@anim/enter_from_right"
+            app:exitAnim="@anim/exit_to_left"
+            app:popEnterAnim="@anim/enter_from_left"
+            app:popExitAnim="@anim/exit_to_right" />
+        <action
+            android:id="@+id/actionUserInfoToUserPhotoOptions"
+            app:destination="@id/userPhotoOptionsBottomSheet" />
+    </fragment>
+    <fragment
+        android:id="@+id/updateUserFragment"
+        android:name="team.standalone.feature.userinfo.ui.updateuser.UpdateUserFragment"
+        android:label="@string/user_info_fragment_update_user_title"
+        tools:layout="@layout/user_info_fragment_update_user">
+        <action
+            android:id="@+id/actionUpdateUserToSelectBirthdate"
+            app:destination="@id/selectBirthdateDialog" />
+    </fragment>
+    <fragment
+        android:id="@+id/updateEmailFragment"
+        android:name="team.standalone.feature.userinfo.ui.updateemail.UpdateEmailFragment"
+        android:label="@string/user_info_fragment_update_email_title"
+        tools:layout="@layout/user_info_fragment_update_email">
+        <action
+            android:id="@+id/actionUpdateEmailToUpdateEmailFinish"
+            app:destination="@id/updateEmailFinishFragment"
+            app:enterAnim="@anim/enter_from_right"
+            app:exitAnim="@anim/exit_to_left"
+            app:popEnterAnim="@anim/enter_from_left"
+            app:popExitAnim="@anim/exit_to_right"
+            app:popUpTo="@id/userInfoFragment"
+            app:popUpToInclusive="false" />
+    </fragment>
+    <fragment
+        android:id="@+id/updatePasswordFragment"
+        android:name="team.standalone.feature.userinfo.ui.updatepassword.UpdatePasswordFragment"
+        android:label="@string/user_info_fragment_update_password_title"
+        tools:layout="@layout/user_info_fragment_update_password" />
+    <fragment
+        android:id="@+id/updateEmailFinishFragment"
+        android:name="team.standalone.feature.userinfo.ui.updateemailfinish.UpdateEmailFinishFragment"
+        android:label="@string/user_info_fragment_update_email_finish_title"
+        tools:layout="@layout/user_info_fragment_update_email_finish" />
+    <fragment
+        android:id="@+id/reSignInFragment"
+        android:name="team.standalone.feature.userinfo.ui.resignin.ReSignInFragment"
+        android:label="{title}"
+        tools:layout="@layout/user_info_fragment_re_sign_in">
+        <argument
+            android:name="title"
+            app:argType="string" />
+        <argument
+            android:name="description"
+            app:argType="string" />
+        <argument
+            android:name="interest"
+            app:argType="team.standalone.core.ui.util.ReSignInInterest" />
+        <action
+            android:id="@+id/actionReSignInToUpdatePassword"
+            app:destination="@id/updatePasswordFragment"
+            app:enterAnim="@anim/enter_from_right"
+            app:exitAnim="@anim/exit_to_left"
+            app:popEnterAnim="@anim/enter_from_left"
+            app:popExitAnim="@anim/exit_to_right"
+            app:popUpTo="@id/userInfoFragment"
+            app:popUpToInclusive="false" />
+        <action
+            android:id="@+id/actionReSignInToUpdateEmail"
+            app:destination="@id/updateEmailFragment"
+            app:enterAnim="@anim/enter_from_right"
+            app:exitAnim="@anim/exit_to_left"
+            app:popEnterAnim="@anim/enter_from_left"
+            app:popExitAnim="@anim/exit_to_right"
+            app:popUpTo="@id/userInfoFragment"
+            app:popUpToInclusive="false" />
+        <action
+            android:id="@+id/actionReSignInToResetPassword"
+            app:destination="@id/resetPasswordFragment"
+            app:enterAnim="@anim/enter_from_right"
+            app:exitAnim="@anim/exit_to_left"
+            app:popEnterAnim="@anim/enter_from_left"
+            app:popExitAnim="@anim/exit_to_right" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/resetPasswordFragment"
+        android:name="team.standalone.feature.userinfo.ui.resetpassword.ResetPasswordFragment"
+        android:label="@string/user_info_fragment_reset_password_title"
+        tools:layout="@layout/user_info_fragment_reset_password">
+        <action
+            android:id="@+id/actionResetPasswordToResetPasswordFinish"
+            app:destination="@id/resetPasswordFinishFragment"
+            app:enterAnim="@anim/enter_from_right"
+            app:exitAnim="@anim/exit_to_left"
+            app:popEnterAnim="@anim/enter_from_left"
+            app:popExitAnim="@anim/exit_to_right"
+            app:popUpTo="@id/resetPasswordFragment"
+            app:popUpToInclusive="true" />
+        <deepLink
+            android:id="@+id/deepLinkResetPassword"
+            app:uri="https://www.fumiya.com/reset-password" />
+    </fragment>
+    <fragment
+        android:id="@+id/resetPasswordFinishFragment"
+        android:name="team.standalone.feature.userinfo.ui.resetpasswordfinish.ResetPasswordFinishFragment"
+        android:label="@string/user_info_fragment_reset_password_finish_title"
+        tools:layout="@layout/user_info_fragment_reset_password_finish">
+        <action
+            android:id="@+id/actionPopupToUserInfo"
+            app:popUpTo="@id/userInfoFragment" />
+    </fragment>
+    <dialog
+        android:id="@+id/userPhotoOptionsBottomSheet"
+        android:name="team.standalone.feature.userinfo.ui.userphotooptions.UserPhotoOptionsBottomSheet"
+        android:label="@string/user_info_bottom_sheet_user_photo_options_title"
+        tools:layout="@layout/user_info_bottom_sheet_user_photo_options" />
+    <dialog
+        android:id="@+id/selectBirthdateDialog"
+        android:name="team.standalone.feature.userinfo.ui.selectbirthdate.SelectBirthdateDialog"
+        android:label="@string/user_info_dialog_select_birthdate_title">
+        <argument
+            android:name="birthdateParam"
+            app:argType="team.standalone.core.data.domain.model.param.BirthdateParam"
+            app:nullable="true" />
+    </dialog>
+    <fragment
+        android:id="@+id/cropPhotoFragment"
+        android:name="team.standalone.feature.userinfo.ui.cropphoto.CropPhotoFragment"
+        android:label="@string/user_info_fragment_crop_photo_title"
+        tools:layout="@layout/user_info_fragment_crop_photo">
+        <argument
+            android:name="filePath"
+            app:argType="string" />
+    </fragment>
+</navigation>

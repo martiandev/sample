@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorButtonPrimary">#313172</color>
+    <color name="colorInputError">#FF8A00</color>
+</resources>

@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- use case: common -->
+    <string name="uc_success">Success</string>
+    <string name="uc_failed">Failed</string>
+    <string name="uc_invalid_credentials">Invalid credentials</string>
+    <string name="uc_network_error">Could not connect to the network</string>
+    <string name="uc_unexpected_error">Error occurred unexpectedly</string>
+    <!-- use case: update user -->
+    <string name="uc_update_user_title">User Information</string>
+    <string name="uc_update_user_message">Updating&#8230;</string>
+    <string name="uc_update_user_success">User information updated</string>
+    <string name="uc_update_user_failed">@string/uc_failed</string>
+    <string name="uc_update_user_failed_invalid_nickname">Invalid nickname</string>
+    <string name="uc_update_user_failed_invalid_nickname_empty">Please enter a nickname</string>
+    <string name="uc_update_user_failed_invalid_name_empty">Please enter first name and last name</string>
+    <string name="uc_update_user_failed_invalid_first_name">Invalid first name</string>
+    <string name="uc_update_user_failed_invalid_first_name_empty">Please enter first name</string>
+    <string name="uc_update_user_failed_invalid_last_name">Invalid last name</string>
+    <string name="uc_update_user_failed_invalid_last_name_empty">Please enter last name</string>
+    <string name="uc_update_user_failed_invalid_first_name_kana">Invalid first name kana</string>
+    <string name="uc_update_user_failed_invalid_first_name_kana_empty">Please enter first name kana</string>
+    <string name="uc_update_user_failed_invalid_last_name_kana">Invalid last name kana</string>
+    <string name="uc_update_user_failed_invalid_last_name_kana_empty">Please enter last name kana</string>
+    <string name="uc_update_user_failed_invalid_name_kana_empty">Please enter first name and last name</string>
+    <string name="uc_update_user_failed_invalid_birthdate">Invalid birthdate</string>
+    <string name="uc_update_user_failed_invalid_birthdate_empty">Please enter birthdate</string>
+    <string name="uc_update_user_failed_invalid_address_postal_code">Invalid postal code</string>
+    <string name="uc_update_user_failed_invalid_address_prefecture">Invalid prefecture</string>
+    <string name="uc_update_user_failed_invalid_address_city">Invalid city</string>
+    <string name="uc_update_user_failed_invalid_address_number">Invalid number</string>
+    <string name="uc_update_user_failed_invalid_address_structure">Invalid structure</string>
+    <string name="uc_update_user_failed_invalid_phone_number">Invalid phone number</string>
+    <!-- use case: update user photo -->
+    <string name="uc_update_user_photo_title">Photo</string>
+    <string name="uc_update_user_photo_message">Updating&#8230;</string>
+    <string name="uc_update_user_photo_success">@string/uc_success</string>
+    <string name="uc_update_user_photo_failed">@string/uc_failed</string>
+    <!-- use case: delete user photo -->
+    <string name="uc_delete_user_photo_title">Photo</string>
+    <string name="uc_delete_user_photo_message">Deleting&#8230;</string>
+    <string name="uc_delete_user_photo_success">@string/uc_success</string>
+    <string name="uc_delete_user_photo_failed">@string/uc_failed</string>
+    <!-- use case: update email -->
+    <string name="uc_update_email_title">Email</string>
+    <string name="uc_update_email_message">Updating&#8230;</string>
+    <string name="uc_update_email_success">Email updated.</string>
+    <string name="uc_update_email_failed">@string/uc_failed</string>
+    <string name="uc_update_email_failed_invalid_new_email">Please input email</string>
+    <string name="uc_update_email_failed_invalid_new_email_empty">Please input email</string>
+    <string name="uc_update_email_failed_invalid_new_email_confirmation">Does not match input email</string>
+    <string name="uc_update_email_failed_invalid_new_email_confirmation_empty">Does not match input email</string>
+    <!-- use case: update password -->
+    <string name="uc_update_password_title">Password</string>
+    <string name="uc_update_password_message">Updating&#8230;</string>
+    <string name="uc_update_password_success">Password updated</string>
+    <string name="uc_update_password_failed">@string/uc_failed</string>
+    <string name="uc_update_password_failed_invalid_new_password">Please input password</string>
+    <string name="uc_update_password_failed_invalid_new_password_empty">Please input password</string>
+    <string name="uc_update_password_failed_invalid_new_password_confirmation">Does not match password</string>
+    <string name="uc_update_password_failed_invalid_new_password_confirmation_empty">Does not match password</string>
+    <!-- use case: update language -->
+    <string name="uc_update_language_title">Language</string>
+    <string name="uc_update_language_message">Updating&#8230;</string>
+    <string name="uc_update_language_success">Language updated</string>
+    <string name="uc_update_language_failed">@string/uc_failed</string>
+    <!-- use case: delete account -->
+    <string name="uc_delete_account_title">Account</string>
+    <string name="uc_delete_account_message">Deleting&#8230;</string>
+    <string name="uc_delete_account_success">@string/uc_success</string>
+    <string name="uc_delete_account_failed">@string/uc_failed</string>
+    <string name="uc_delete_account_failed_invalid_email">Please input registered email</string>
+    <string name="uc_delete_account_failed_invalid_email_empty">Please input registered email</string>
+    <string name="uc_delete_account_failed_invalid_email_does_not_match">Please input registered email</string>
+    <string name="uc_delete_account_failed_invalid_password">Please input registered password</string>
+    <string name="uc_delete_account_failed_invalid_password_empty">Please input registered password</string>
+    <!-- use case: sign out -->
+    <string name="uc_sign_out_title">Sign Out</string>
+    <string name="uc_sign_out_message">Signing out&#8230;</string>
+    <string name="uc_sign_out_success">@string/uc_success</string>
+    <string name="uc_sign_out_failed">@string/uc_failed</string>
+    <!-- use case: re sign in -->
+    <string name="uc_re_sign_in_title">Sign In</string>
+    <string name="uc_re_sign_in_message">Signing in&#8230;</string>
+    <string name="uc_re_sign_in_success">@string/uc_success</string>
+    <string name="uc_re_sign_in_failed">@string/uc_failed</string>
+    <string name="uc_re_sign_in_failed_invalid_password">Please enter your registered password</string>
+    <string name="uc_re_sign_in_failed_invalid_password_empty">Please enter your registered password</string>
+    <!-- use case: reset password -->
+    <string name="uc_reset_password_title">Password</string>
+    <string name="uc_reset_password_message">Resetting&#8230;</string>
+    <string name="uc_reset_password_success">@string/uc_success</string>
+    <string name="uc_reset_password_failed">@string/uc_failed</string>
+    <string name="uc_reset_password_failed_invalid_email">Invalid email</string>
+    <string name="uc_reset_password_failed_invalid_email_does_not_match">Email does not match with currently registered user</string>
+    <string name="uc_reset_password_failed_invalid_email_empty">Please enter email</string>
+    <!-- use case: send email verification -->
+    <string name="uc_send_email_verification_title">Email Verification</string>
+    <string name="uc_send_email_verification_message">Sending&#8230;</string>
+    <string name="uc_send_email_verification_success">@string/uc_success</string>
+    <string name="uc_send_email_verification_failed">@string/uc_failed</string>
+</resources>

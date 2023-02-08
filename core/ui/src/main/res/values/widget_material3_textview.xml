@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- DEFAULT: Title -->
+
+    <style name="Material3.TextView.Title" parent="TextAppearance.Material3.TitleMedium">
+        <item name="android:textColor">@color/text_primary</item>
+    </style>
+
+    <style name="Material3.TextView.TitleLarge" parent="TextAppearance.Material3.TitleLarge">
+        <item name="android:textColor">@color/text_primary</item>
+    </style>
+
+    <style name="Material3.TextView.TitleMedium" parent="TextAppearance.Material3.TitleMedium">
+        <item name="android:textColor">@color/text_primary</item>
+    </style>
+
+    <style name="Material3.TextView.TitleSmall" parent="TextAppearance.Material3.TitleSmall">
+        <item name="android:textColor">@color/text_primary</item>
+    </style>
+
+    <!-- DEFAULT: Body -->
+
+    <style name="Material3.TextView.Body" parent="TextAppearance.Material3.BodyMedium">
+        <item name="android:textColor">@color/text_primary</item>
+    </style>
+
+    <style name="Material3.TextView.BodyLarge" parent="TextAppearance.Material3.BodyLarge">
+        <item name="android:textColor">@color/text_primary</item>
+    </style>
+
+    <style name="Material3.TextView.BodyMedium" parent="TextAppearance.Material3.BodyMedium">
+        <item name="android:textColor">@color/text_primary</item>
+    </style>
+
+    <style name="Material3.TextView.BodySmall" parent="TextAppearance.Material3.BodySmall">
+        <item name="android:textColor">@color/text_primary</item>
+    </style>
+
+    <!-- DEFAULT: Display -->
+
+    <style name="Material3.TextView.Display" parent="TextAppearance.Material3.DisplayMedium">
+        <item name="android:textColor">@color/text_primary</item>
+    </style>
+
+    <style name="Material3.TextView.DisplayLarge" parent="TextAppearance.Material3.DisplayLarge">
+        <item name="android:textColor">@color/text_primary</item>
+    </style>
+
+    <style name="Material3.TextView.DisplayMedium" parent="TextAppearance.Material3.DisplayMedium">
+        <item name="android:textColor">@color/text_primary</item>
+    </style>
+
+    <style name="Material3.TextView.DisplaySmall" parent="TextAppearance.Material3.DisplaySmall">
+        <item name="android:textColor">@color/text_primary</item>
+    </style>
+
+    <!-- DEFAULT: Headline -->
+
+    <style name="Material3.TextView.Headline" parent="TextAppearance.Material3.HeadlineMedium">
+        <item name="android:textColor">@color/text_primary</item>
+    </style>
+
+    <style name="Material3.TextView.HeadlineLarge" parent="TextAppearance.Material3.HeadlineLarge">
+        <item name="android:textColor">@color/text_primary</item>
+    </style>
+
+    <style name="Material3.TextView.HeadlineMedium" parent="TextAppearance.Material3.HeadlineMedium">
+        <item name="android:textColor">@color/text_primary</item>
+    </style>
+
+    <style name="Material3.TextView.HeadlineSmall" parent="TextAppearance.Material3.HeadlineSmall">
+        <item name="android:textColor">@color/text_primary</item>
+    </style>
+
+    <!-- DEFAULT: Label -->
+
+    <style name="Material3.TextView.Label" parent="TextAppearance.Material3.LabelMedium">
+        <item name="android:textColor">@color/text_primary</item>
+    </style>
+
+    <style name="Material3.TextView.LabelLarge" parent="TextAppearance.Material3.LabelLarge">
+        <item name="android:textColor">@color/text_primary</item>
+    </style>
+
+    <style name="Material3.TextView.LabelMedium" parent="TextAppearance.Material3.LabelMedium">
+        <item name="android:textColor">@color/text_primary</item>
+    </style>
+
+    <style name="Material3.TextView.LabelSmall" parent="TextAppearance.Material3.LabelSmall">
+        <item name="android:textColor">@color/text_primary</item>
+    </style>
+
+    <!-- TODO: INSERT CUSTOM HERE -->
+
+    <style name="Material3.TextView" parent="TextAppearance.Material3.BodyMedium">
+        <item name="android:textColor">@color/text_primary</item>
+    </style>
+
+    <style name="Material3.TextView.BottomSheet.Title" parent="TextAppearance.Material3.TitleLarge">
+        <item name="android:textColor">@color/text_primary_dark</item>
+        <item name="android:textStyle">normal</item>
+    </style>
+
+    <style name="Material3.TextView.BottomSheet.Description" parent="TextAppearance.Material3.TitleSmall">
+        <item name="android:textColor">@color/text_secondary_dark</item>
+        <item name="android:textStyle">normal</item>
+    </style>
+
+    <style name="Material3.TextView.BottomSheet.Item.Title" parent="TextAppearance.Material3.BodyLarge">
+        <item name="android:textColor">@color/text_primary_dark</item>
+        <item name="android:textStyle">normal</item>
+    </style>
+
+    <style name="Material3.TextView.BottomSheet.Item.Description" parent="TextAppearance.Material3.BodyMedium">
+        <item name="android:textColor">@color/text_secondary_dark</item>
+        <item name="android:textStyle">normal</item>
+    </style>
+
+    <style name="Material3.TextView.Error" parent="TextAppearance.Material3.BodyMedium">
+        <item name="android:textColor">@color/error</item>
+    </style>
+
+    <style name="Material3.TextView.Required" parent="TextAppearance.Material3.BodyMedium">
+        <item name="android:textColor">@color/text_primary_light</item>
+        <item name="android:background">@drawable/background_required</item>
+        <item name="android:paddingStart">6dp</item>
+        <item name="android:paddingEnd">6dp</item>
+    </style>
+</resources>

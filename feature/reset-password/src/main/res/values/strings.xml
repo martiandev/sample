@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">BRIDGE LAND</string>
+
+    <!-- fragment: reset password -->
+    <string name="fragment_reset_password_header">@string/raw_common_reset_password</string>
+    <string name="fragment_reset_password_description">@string/raw_reset_password_description</string>
+    <string name="fragment_reset_password_note">@string/raw_common_reset_password_note</string>
+    <string name="fragment_reset_password_hint">@string/raw_reset_password_hint</string>
+    <string name="fragment_reset_password_btn_send">@string/raw_common_next</string>
+    <string name="fragment_reset_password_email">@string/raw_common_email</string>
+    <string name="fragment_reset_password_sending_failed">@string/raw_uc_reset_password_failed_invalid_email</string>
+    <string name="fragment_reset_password_validation_invalid_email">@string/raw_common_validation_invalid_empty_email</string>
+
+    <!-- fragment: reset password verification -->
+    <string name="fragment_reset_password_verification_header">@string/raw_reset_password_verification_header</string>
+    <string name="fragment_reset_password_verification_description">@string/raw_reset_password_verification_description</string>
+    <string name="fragment_reset_password_verification_message">@string/raw_reset_password_verification_message</string>
+    <string name="fragment_reset_password_verification_note_1">@string/raw_reset_password_verification_note_1</string>
+    <string name="fragment_reset_password_verification_note_2">@string/raw_reset_password_verification_note_2</string>
+    <string name="fragment_reset_password_verification_back_to_login">@string/raw_common_back_to_login</string>
+</resources>

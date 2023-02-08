@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="Material3.CardView.Outlined" parent="Widget.Material3.CardView.Outlined" />
+
+    <style name="Material3.CardView.Filled" parent="Widget.Material3.CardView.Filled" />
+
+    <style name="Material3.CardView.Elevated" parent="Widget.Material3.CardView.Elevated" />
+
+    <!-- TODO: INSERT CUSTOM HERE -->
+</resources>

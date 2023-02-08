@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+option java_package = "team.standalone.core.datastore.proto.model";
+option java_multiple_files = true;
+
+message UserProtoFile {
+  string uid = 1;
+  string email = 2;
+  bool isEmailVerified = 3;
+}

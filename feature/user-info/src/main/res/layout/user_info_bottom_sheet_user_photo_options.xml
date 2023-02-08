@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <import
+            alias="USER_PHOTO_OPTION"
+            type="team.standalone.core.ui.util.UserPhotoOption" />
+
+        <variable
+            name="bottomSheet"
+            type="team.standalone.feature.userinfo.ui.userphotooptions.UserPhotoOptionsBottomSheet" />
+
+        <variable
+            name="viewModel"
+            type="team.standalone.feature.userinfo.ui.userphotooptions.UserPhotoOptionsViewModel" />
+
+        <variable
+            name="user"
+            type="team.standalone.core.data.domain.model.User" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:orientation="vertical">
+
+        <!-- delete current photo -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:clickable="@{user.photoUrl != null}"
+            android:onClick="@{() -> viewModel.selectUserPhotoOption(USER_PHOTO_OPTION.DELETE)}"
+            android:orientation="horizontal"
+            android:padding="@dimen/padding">
+
+            <com.google.android.material.imageview.ShapeableImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/margin"
+                app:srcCompat="@drawable/ic_baseline_delete_24"
+                app:tint="@{user.photoUrl != null ? @color/icon_primary_dark : @color/icon_secondary_dark}" />
+
+            <com.google.android.material.textview.MaterialTextView
+                style="@style/Material3.TextView.BottomSheet.Item.Title"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/user_info_bottom_sheet_user_photo_options_item_delete_photo"
+                android:textColor="@{user.photoUrl != null ? @color/text_primary_dark : @color/text_secondary_dark}" />
+        </LinearLayout>
+
+        <!-- gallery -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="@{() -> viewModel.selectUserPhotoOption(USER_PHOTO_OPTION.GALLERY)}"
+            android:orientation="horizontal"
+            android:padding="@dimen/padding">
+
+            <com.google.android.material.imageview.ShapeableImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/margin"
+                app:srcCompat="@drawable/ic_baseline_photo_library_24"
+                app:tint="@color/icon_primary_dark" />
+
+            <com.google.android.material.textview.MaterialTextView
+                style="@style/Material3.TextView.BottomSheet.Item.Title"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/user_info_bottom_sheet_user_photo_options_item_gallery" />
+        </LinearLayout>
+
+        <!-- camera -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="@{() -> viewModel.selectUserPhotoOption(USER_PHOTO_OPTION.CAMERA)}"
+            android:orientation="horizontal"
+            android:padding="@dimen/padding">
+
+            <com.google.android.material.imageview.ShapeableImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/margin"
+                app:srcCompat="@drawable/ic_baseline_photo_camera_24"
+                app:tint="@color/icon_primary_dark" />
+
+            <com.google.android.material.textview.MaterialTextView
+                style="@style/Material3.TextView.BottomSheet.Item.Title"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/user_info_bottom_sheet_user_photo_options_item_camera" />
+        </LinearLayout>
+    </LinearLayout>
+</layout>

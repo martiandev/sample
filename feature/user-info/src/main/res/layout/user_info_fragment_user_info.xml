@@ -1,0 +1,224 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="fragment"
+            type="team.standalone.feature.userinfo.ui.userinfo.UserInfoFragment" />
+
+        <variable
+            name="viewModel"
+            type="team.standalone.feature.userinfo.ui.userinfo.UserInfoViewModel" />
+
+        <variable
+            name="user"
+            type="team.standalone.core.data.domain.model.User" />
+    </data>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/background"
+        android:clipToPadding="false">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="@dimen/padding">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/margin"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/contentPhoto"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/user_info_item_margin"
+                    android:onClick="@{() -> viewModel.openUserPhotoOptions()}">
+
+                    <com.google.android.material.imageview.ShapeableImageView
+                        style="@style/ShapeableImageView.Photo.User"
+                        app:image_base64="@{user.photoUrl}"
+                        app:image_enabled="@{true}"
+                        app:image_error="@{@drawable/image_default_user_photo}"
+                        app:image_placeholder="@{@drawable/image_default_user_photo}"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <com.google.android.material.imageview.ShapeableImageView
+                        style="@style/ShapeableImageView.Photo.User.Add"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:srcCompat="@drawable/ic_baseline_add_24" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <com.google.android.material.textview.MaterialTextView
+                    style="@style/Material3.TextView"
+                    android:fontFamily="@font/noto_sans_jp_medium"
+                    android:textSize="16sp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/user_info_item_margin"
+                    app:japFormatFirstName="@{user.firstName}"
+                    app:japFormatLastName="@{user.lastName}"
+                    app:japFormatSalutation="@{@string/user_info_fragment_user_info_label_salutation}"/>
+
+                <com.google.android.material.textview.MaterialTextView
+                    style="@style/Material3.TextView"
+                    android:fontFamily="@font/noto_sans_jp_regular"
+                    android:textSize="12sp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@{user.email}" />
+
+                <com.google.android.material.textview.MaterialTextView
+                    style="@style/Material3.TextView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text='@{@string/user_info_fragment_user_info_label_member_number(user.memberNumber ?? "")}'
+                    app:visibleHidden="@{user.isMember()}" />
+
+                <com.google.android.material.textview.MaterialTextView
+                    style="@style/Material3.TextView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text='@{@string/user_info_fragment_user_info_label_registered(user.subscription.displayFirstBillingDate())}'
+                    app:visibleHidden="@{user.isMember()}" />
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/divider"
+                android:background="@color/divider" />
+
+            <!-- update user -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:onClick="@{() -> viewModel.openUpdateUser()}"
+                android:orientation="horizontal"
+                android:paddingTop="@dimen/padding"
+                android:paddingBottom="@dimen/padding">
+
+                <com.google.android.material.textview.MaterialTextView
+                    style="@style/Material3.TextView"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/user_info_fragment_user_info_btn_update_user" />
+
+                <com.google.android.material.imageview.ShapeableImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:srcCompat="@drawable/ic_baseline_keyboard_arrow_right_24"
+                    app:tint="@color/icon_primary" />
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/divider"
+                android:background="@color/divider" />
+
+            <!-- update email -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:onClick="@{() -> viewModel.openUpdateEmail()}"
+                android:orientation="horizontal"
+                android:paddingTop="@dimen/padding"
+                android:paddingBottom="@dimen/padding">
+
+                <com.google.android.material.textview.MaterialTextView
+                    style="@style/Material3.TextView"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/user_info_fragment_user_info_btn_update_email" />
+
+                <com.google.android.material.imageview.ShapeableImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:srcCompat="@drawable/ic_baseline_keyboard_arrow_right_24"
+                    app:tint="@color/icon_primary" />
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/divider"
+                android:background="@color/divider" />
+
+            <!-- update password -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:onClick="@{() -> viewModel.openUpdatePassword()}"
+                android:orientation="horizontal"
+                android:paddingTop="@dimen/padding"
+                android:paddingBottom="@dimen/padding">
+
+                <com.google.android.material.textview.MaterialTextView
+                    style="@style/Material3.TextView"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/user_info_fragment_user_info_btn_update_password" />
+
+                <com.google.android.material.imageview.ShapeableImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:srcCompat="@drawable/ic_baseline_keyboard_arrow_right_24"
+                    app:tint="@color/icon_primary" />
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/divider"
+                android:background="@color/divider" />
+
+            <!-- subscription expire date -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:paddingTop="@dimen/padding"
+                android:paddingBottom="@dimen/padding"
+                app:visibleHidden="@{user.isMember()}">
+
+                <com.google.android.material.textview.MaterialTextView
+                    style="@style/Material3.TextView"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text='@{@string/user_info_fragment_user_info_label_subscription_expire_date(user.subscription.displayExpiredDate())}' />
+
+                <com.google.android.material.imageview.ShapeableImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:srcCompat="@drawable/ic_baseline_keyboard_arrow_right_24"
+                    app:tint="@color/icon_primary"
+                    app:visibleHidden="@{false}" />
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/divider"
+                android:layout_marginBottom="@dimen/margin"
+                android:background="@color/divider"
+                app:visibleHidden="@{user.isMember()}" />
+
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+</layout>

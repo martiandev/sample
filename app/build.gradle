@@ -1,0 +1,214 @@
+plugins {
+    id 'com.android.application'
+    id 'kotlin-android'
+    id 'kotlin-parcelize'
+    id 'kotlin-kapt'
+    id 'androidx.navigation.safeargs.kotlin'
+    id 'dagger.hilt.android.plugin'
+    id 'com.google.firebase.crashlytics'
+    id 'com.google.gms.google-services'
+}
+
+android {
+    compileSdk config.compileSdk
+    defaultConfig {
+        applicationId "team.standalone.fumiya"
+        minSdk config.minSdk
+        targetSdk config.targetSdk
+        def versionMajor = 1
+        def versionMinor = 0
+        def versionPatch = 5
+        versionCode versionMajor * 10000 + versionMinor * 100 + versionPatch
+        versionName "${versionMajor}.${versionMinor}.${versionPatch}"
+        testInstrumentationRunner "team.standalone.fumiya.TestHiltRunner"
+        signingConfig signingConfigs.debug
+//        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+    buildFeatures {
+        viewBinding true
+        dataBinding true
+    }
+    flavorDimensions 'environment'
+    productFlavors {
+        devInternal {
+            dimension 'environment'
+            // applicationIdSuffix '.devinternal'
+            versionNameSuffix '-dev-internal'
+        }
+        dev {
+            dimension 'environment'
+            // applicationIdSuffix '.dev'
+            versionNameSuffix '-dev'
+        }
+        qa {
+            dimension 'environment'
+            // applicationIdSuffix '.qa'
+            versionNameSuffix '-qa'
+        }
+        staging {
+            dimension 'environment'
+            // applicationIdSuffix '.staging'
+            versionNameSuffix '-staging'
+        }
+        prod {
+            dimension 'environment'
+        }
+    }
+    buildTypes {
+        debug {
+            buildConfigField('String', 'CONFIG_ONE_SIGNAL', '"3a085e84-9034-4b93-ad77-aafd7cfe5efb"')
+            buildConfigField('String', 'CONFIG_BILLING_SUB_ITEM', '"membership_fumiya"')
+            buildConfigField('String', 'CONFIG_BILLING_RECEIPT_VERIFICATION', '"androidReceiptVerification"')
+            buildConfigField('String', 'WEBLINK_TRANSACTION_LAW', '"https://brige.international/pages/legal_information/"')
+            buildConfigField('String', 'WEBLINK_FUMIYA_PAGE', '"https://fumiyadev.page.link"')
+            buildConfigField('String', 'SOCIAL_INSTAGRAM', '"https://www.instagram.com"')
+            buildConfigField('String', 'SOCIAL_TIKTOK', '"https://www.tiktok.com"')
+            buildConfigField('String', 'SOCIAL_TWITTER', '"https://twitter.com"')
+            buildConfigField('String', 'SOCIAL_YOUTUBE', '"https://www.youtube.com"')
+            buildConfigField('String', 'SOCIAL_MOBILE_FACEBOOK', '"https://m.facebook.com/"')
+            buildConfigField('String', 'SOCIAL_FACEBOOK', '"https://facebook.com/"')
+            buildConfigField('String', 'SOCIAL_MOBILE_YOUTUBE', '"https://m.youtube.com/"')
+            buildConfigField('String', 'WEBLINK_FAQ', '"https://tayori.com/faq/0be77301b7b54f32684e308cd0f610bbec991da8/"')
+            buildConfigField('String', 'WEBLINK_INQUIRY', '"https://tayori.com/form/b933b934dee0349a670eaa66afab93e228cd4154/"')
+            buildConfigField('String', 'WEBLINK_STANDALONE_LOCAL', '"standalone://local.web/?url"')
+
+            buildConfigField('String', 'WEBLINK_HOME', '"https://staging-home-fumiya-standalone.dsign.gift/"')
+            buildConfigField('String', 'WEBLINK_VIDEO', '"https://staging-home-fumiya-standalone.dsign.gift/video/list"')
+            buildConfigField('String', 'WEBLINK_PHOTO', '"https://staging-photo-fumiya-standalone.dsign.gift/"')
+            buildConfigField('String', 'WEBLINK_LIVE', '"https://staging-home-fumiya-standalone.dsign.gift/live/"')
+            buildConfigField('String', 'WEBLINK_CHAT', '"https://staging-groupchat-fumiya-standalone.dsign.gift/"')
+        }
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            buildConfigField('String', 'CONFIG_ONE_SIGNAL', '"acf5779d-f46b-474f-850b-a2e6762a9076"')
+            buildConfigField('String', 'CONFIG_BILLING_SUB_ITEM', '"membership_fumiya"')
+            buildConfigField('String', 'CONFIG_BILLING_RECEIPT_VERIFICATION', '"androidReceiptVerification"')
+            buildConfigField('String', 'WEBLINK_TRANSACTION_LAW', '"https://brige.international/pages/legal_information/"')
+            buildConfigField('String', 'WEBLINK_FUMIYA_PAGE', '"https://fumiya.page.link"')
+            buildConfigField('String', 'SOCIAL_INSTAGRAM', '"https://www.instagram.com"')
+            buildConfigField('String', 'SOCIAL_TIKTOK', '"https://www.tiktok.com"')
+            buildConfigField('String', 'SOCIAL_TWITTER', '"https://twitter.com"')
+            buildConfigField('String', 'SOCIAL_YOUTUBE', '"https://www.youtube.com"')
+            buildConfigField('String', 'SOCIAL_MOBILE_YOUTUBE', '"https://m.youtube.com/"')
+            buildConfigField('String', 'SOCIAL_MOBILE_FACEBOOK', '"https://m.facebook.com/"')
+            buildConfigField('String', 'SOCIAL_FACEBOOK', '"https://facebook.com/"')
+            buildConfigField('String', 'WEBLINK_FAQ', '"https://tayori.com/faq/0be77301b7b54f32684e308cd0f610bbec991da8/"')
+            buildConfigField('String', 'WEBLINK_INQUIRY', '"https://tayori.com/form/b933b934dee0349a670eaa66afab93e228cd4154/"')
+            buildConfigField('String', 'WEBLINK_STANDALONE_LOCAL', '"standalone://local.web/?url"')
+
+            buildConfigField('String', 'WEBLINK_HOME', '"https://home-fumiya-standalone.dsign.gift/"')
+            buildConfigField('String', 'WEBLINK_VIDEO', '"https://home-fumiya-standalone.dsign.gift/video/list/"')
+            buildConfigField('String', 'WEBLINK_PHOTO', '"https://photo-fumiya-standalone.dsign.gift/"')
+            buildConfigField('String', 'WEBLINK_LIVE', '"https://home-fumiya-standalone.dsign.gift/live/"')
+            buildConfigField('String', 'WEBLINK_CHAT', '"https://groupchat-fumiya-standalone.dsign.gift/"')
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        jvmTarget = JavaVersion.VERSION_1_8.toString()
+    }
+    variantFilter { variant ->
+        def names = variant.flavors*.name
+        if (variant.buildType.name == "release" && !names.contains("prod")) {
+            setIgnore(true)
+        }
+    }
+    applicationVariants.all { variant ->
+        variant.outputs.each { output ->
+            output.outputFileName = "${variant.name}-${variant.versionName}.apk"
+        }
+    }
+}
+
+dependencies {
+    implementation project(path: ':core:common')
+    implementation project(path: ':core:data')
+    implementation project(path: ':core:ui')
+    implementation project(path: ':feature:billing')
+    implementation project(path: ':feature:reset-password')
+    implementation project(path: ':feature:other')
+
+    //Logging
+    implementation 'com.jakewharton.timber:timber:5.0.1'
+
+    // jetpack: architecture
+    implementation "androidx.lifecycle:lifecycle-runtime-ktx:$architecture.lifecycle"
+    implementation "androidx.lifecycle:lifecycle-livedata-ktx:$architecture.lifecycle"
+    implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:$architecture.lifecycle"
+    implementation "androidx.navigation:navigation-fragment-ktx:$architecture.navigation"
+    implementation "androidx.navigation:navigation-ui-ktx:$architecture.navigation"
+    // jetpack: foundation
+    implementation "androidx.core:core-ktx:$foundation.coreKtx"
+    implementation "androidx.appcompat:appcompat:$foundation.appcompat"
+
+    testImplementation "junit:junit:$foundation.junit"
+    androidTestImplementation "androidx.test.ext:junit:$foundation.androidJUnit"
+    androidTestImplementation "androidx.test.espresso:espresso-core:$foundation.androidEspresso"
+    // jetpack: behaviour
+    // jetpack: ui
+    implementation "com.google.android.material:material:$ui.material"
+    implementation "androidx.constraintlayout:constraintlayout:$ui.constraintLayout"
+    // dependency injection
+    implementation "com.google.dagger:hilt-android:$architecture.hilt"
+    kapt "com.google.dagger:hilt-compiler:$architecture.hilt"
+    // google play services
+    implementation 'com.google.android.gms:play-services-oss-licenses:17.0.0'
+
+    // File manager
+    implementation 'com.github.onimur:handle-path-oz:1.0.7'
+
+    // Firebase
+    implementation platform("com.google.firebase:firebase-bom:$versions.firebase")
+    implementation 'com.google.firebase:firebase-crashlytics-ktx'
+    implementation 'com.google.firebase:firebase-analytics-ktx'
+    implementation('com.google.firebase:firebase-auth-ktx') {
+        exclude module: "play-services-safetynet"
+    }
+    implementation 'com.google.firebase:firebase-dynamic-links-ktx'
+    implementation 'com.google.firebase:firebase-firestore-ktx'
+    implementation 'com.google.firebase:firebase-perf-ktx'
+    implementation 'com.google.firebase:firebase-config-ktx'
+    implementation 'com.google.firebase:firebase-functions-ktx'
+    implementation 'com.google.firebase:firebase-storage-ktx'
+
+    // OneSignal
+    implementation 'com.onesignal:OneSignal:[4.0.0, 4.99.99]'
+
+    //Testing
+    debugImplementation "androidx.fragment:fragment-testing:1.5.0"
+    testImplementation 'androidx.arch.core:core-testing:2.1.0'
+    testImplementation "junit:junit:$foundation.junit"
+    testImplementation "org.mockito.kotlin:mockito-kotlin:+"
+    testImplementation 'org.mockito:mockito-inline:2.21.0'
+    testImplementation 'androidx.arch.core:core-testing:2.1.0'
+    testImplementation 'org.jetbrains.kotlinx:kotlinx-coroutines-test:1.3.8'
+    testImplementation 'com.google.dagger:hilt-android-testing:2.38.1'
+    testImplementation 'org.mockito:mockito-android:4.6.1'
+    testImplementation 'androidx.test:core-ktx:1.1.0'
+    kaptTest 'com.google.dagger:hilt-android-compiler:2.38.1'
+    testAnnotationProcessor 'com.google.dagger:hilt-android-compiler:2.38.1'
+    testImplementation project(path: ':core:ui')
+
+    androidTestImplementation 'androidx.arch.core:core-testing:2.1.0'
+    androidTestImplementation 'com.google.dagger:hilt-android-testing:2.38.1'
+    kaptAndroidTest 'com.google.dagger:hilt-android-compiler:2.38.1'
+    androidTestAnnotationProcessor 'com.google.dagger:hilt-android-compiler:2.38.1'
+    androidTestImplementation 'com.jakewharton.espresso:okhttp3-idling-resource:1.0.0'
+    androidTestImplementation 'androidx.test:runner:1.3.0'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.2'
+    androidTestImplementation "org.mockito.kotlin:mockito-kotlin:+"
+    androidTestImplementation 'org.mockito:mockito-android:4.6.1'
+    androidTestImplementation "androidx.test.ext:junit:$foundation.androidJUnit"
+    androidTestImplementation "androidx.test.espresso:espresso-core:$foundation.androidEspresso"
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
+    androidTestImplementation 'androidx.test:core-ktx:1.1.0'
+    androidTestImplementation('androidx.test.espresso:espresso-web:3.4.0')
+    androidTestImplementation project(path: ':core:ui')
+    
+    implementation 'androidx.work:work-runtime:2.7.1'
+
+}

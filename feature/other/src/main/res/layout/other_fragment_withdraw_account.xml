@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="fragment"
+            type="team.standalone.feature.other.ui.withdrawaccount.WithdrawAccountFragment" />
+
+        <variable
+            name="viewModel"
+            type="team.standalone.feature.other.ui.withdrawaccount.WithdrawAccountViewModel" />
+    </data>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/background">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="@dimen/padding">
+
+            <com.google.android.material.textview.MaterialTextView
+                style="@style/Material3.TextView.Title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/margin"
+                android:gravity="center"
+                android:text="@string/other_fragment_withdraw_account_title"
+                android:textStyle="bold" />
+
+            <com.google.android.material.textview.MaterialTextView
+                style="@style/Material3.TextView.Body"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/margin"
+                android:text="@string/other_fragment_withdraw_account_description" />
+
+            <!-- email -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/margin"
+                android:orientation="vertical">
+
+                <com.google.android.material.textview.MaterialTextView
+                    style="@style/Material3.TextView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/other_fragment_withdraw_account_hint_email" />
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/textInputLayoutEmail"
+                    style="@style/Material3.TextInputLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/textInputEditTextEmail"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="textEmailAddress"
+                        android:nextFocusDown="@id/textInputEditTextPassword"
+                        android:text="@={viewModel.email.input}" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textview.MaterialTextView
+                    style="@style/Material3.TextView.Error"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:formError="@{viewModel.email.error}"
+                    app:formHasError="@{viewModel.email.hasError}" />
+            </LinearLayout>
+
+            <!-- password -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/margin"
+                android:orientation="vertical">
+
+                <com.google.android.material.textview.MaterialTextView
+                    style="@style/Material3.TextView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/other_fragment_withdraw_account_hint_password" />
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/textInputLayoutPassword"
+                    style="@style/Material3.TextInputLayout.Password"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/textInputEditTextPassword"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="textPassword"
+                        android:text="@={viewModel.password.input}" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textview.MaterialTextView
+                    style="@style/Material3.TextView.Error"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:formError="@{viewModel.password.error}"
+                    app:formHasError="@{viewModel.password.hasError}" />
+            </LinearLayout>
+
+            <com.google.android.material.button.MaterialButton
+                style="@style/Material3.Button.Text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/margin"
+                android:onClick="@{() -> viewModel.openForgotPassword()}"
+                android:text="@string/other_fragment_withdraw_account_btn_forgot_password"
+                app:isUnderlined="@{true}" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/buttonWithdraw"
+                style="@style/Material3.Button"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:onClick="@{() -> viewModel.openDeleteAccountConfirmation()}"
+                android:text="@string/other_fragment_withdraw_account_btn_next" />
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+</layout>
